@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+// import "./index.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./Login.jsx"
 import Profile from "./Profile.jsx"
+import About from "./About.jsx"
+import Map from "./Map.jsx"
 
 // const googleClientId = import.meta.env.VITE_ID;
 // console.log(import.meta.env.VITE_ID);
@@ -25,6 +27,8 @@ function App() {
          <Routes>
             <Route exact path="/" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/map" element={<Map />} />
          </Routes> 
       </Router>
    );
@@ -40,6 +44,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <React.StrictMode>
          <App />
       </React.StrictMode>
-      ,
    </Auth0Provider>
 );
