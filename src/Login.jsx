@@ -1,70 +1,76 @@
-import { useState } from 'react'
-import { GoogleLogin } from '@react-oauth/google'
+import { useState } from "react";
+import { GoogleLogin } from "@react-oauth/google";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
 
 function Login() {
-  const {loginWithRedirect} = useAuth0();
+   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
-  const pages = [{name: "About", path: "/about"}, {name: "Crime Map", path: "/map"}];
+   const pages = [
+      { name: "About", path: "/about" },
+      { name: "Crime Map", path: "/map" },
+   ];
 
-  return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
+   return isAuthenticated ? (
+    <p>Auth successful</p>) : (
+      <AppBar position="static">
+         <Container maxWidth="xl">
+            <Toolbar disableGutters>
+               <Typography
+                  variant="h6"
+                  noWrap
+                  component="a"
+                  // href="#app-bar-with-responsive-menu"
+                  sx={{
+                     mr: 2,
+                     display: { xs: "none", md: "flex" },
+                     fontFamily: "monospace",
+                     fontWeight: 700,
+                     letterSpacing: ".3rem",
+                     color: "inherit",
+                     textDecoration: "none",
+                  }}
+               >
+                  LOGO
+               </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.name}
-                component={Link}
-                to={page.path}
-                // onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page.name}
-              </Button>
-            ))}
-          </Box>
+               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+                  {pages.map((page) => (
+                     <Button
+                        key={page.name}
+                        component={Link}
+                        to={page.path}
+                        // onClick={handleCloseNavMenu}
+                        sx={{ my: 2, color: "white", display: "block" }}
+                     >
+                        {page.name}
+                     </Button>
+                  ))}
+               </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Log in">
-              <Button onClick={() => loginWithRedirect()} sx={{color: 'white', p: 0}}>
-                Login
-              </Button>
-            </Tooltip>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
+               <Box sx={{ flexGrow: 0 }}>
+                  <Tooltip title="Log in">
+                     <Button
+                        onClick={() => loginWithRedirect()}
+                        sx={{ color: "white", p: 0 }}
+                     >
+                        Login
+                     </Button>
+                  </Tooltip>
+               </Box>
+            </Toolbar>
+         </Container>
+      </AppBar>
+   );
 }
 
-export default Login
+export default Login;

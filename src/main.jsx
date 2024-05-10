@@ -39,8 +39,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain={import.meta.env.VITE_AUTH0DOMAIN}
       clientId={import.meta.env.VITE_AUTH0CLIENTID}
       authorizationParams={{
-         redirect_uri: "http://localhost:5173/profile"
-       }}>
+         redirect_uri: "http://localhost:5176"
+       }}
+       >
       <React.StrictMode>
          <App />
       </React.StrictMode>
