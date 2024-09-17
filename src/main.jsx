@@ -4,10 +4,10 @@ import ReactDOM from "react-dom/client";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./Login.jsx"
-import Profile from "./Profile.jsx"
-import About from "./About.jsx"
-import Map from "./Map.jsx"
+import Login from "./components/Home/Login.jsx"
+import Profile from "./components/Profile/Profile.jsx"
+import About from "./components/Home/About.jsx"
+import Map from "./components/Home/Map/Map.jsx"
 
 // const googleClientId = import.meta.env.VITE_ID;
 // console.log(import.meta.env.VITE_ID);
@@ -39,7 +39,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain={import.meta.env.VITE_AUTH0DOMAIN}
       clientId={import.meta.env.VITE_AUTH0CLIENTID}
       authorizationParams={{
-         redirect_uri: "http://localhost:5176/profile"
+         redirect_uri: "http://localhost:5173/profile"
        }}
        >
       <React.StrictMode>

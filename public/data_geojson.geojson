@@ -1,0 +1,1049 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-12",
+                "start_time": "01:00:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Street - Other",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0485,
+                    39.06256
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "23:44:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Parking Lot - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1141,
+                    39.06963
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "23:30:00.000",
+                "NIBRS_CrimeName": "Motor Vehicle Theft",
+                "Offense_Name": "AUTO THEFT - VEHICLE THEFT",
+                "place": "Parking Lot - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "23:13:00.000",
+                "NIBRS_CrimeName": "Destruction/Damage/Vandalism of Property",
+                "Offense_Name": "DAMAGE PROPERTY - PRIVATE",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1252,
+                    39.08191
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "23:13:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1252,
+                    39.08191
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "23:13:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "OBSTRUCT GOVT - OBSTRUCTING JUSTICE",
+                "place": "Gas Station",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1252,
+                    39.08191
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "23:13:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "FUGITIVE FROM MD JURISDICTION",
+                "place": "Jail/Prison",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1252,
+                    39.08191
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "22:37:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Street - Residential",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.007,
+                    38.99844
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "19:53:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1647,
+                    39.16007
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "19:37:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Street - Other",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0065,
+                    38.97665
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "19:06:00.000",
+                "NIBRS_CrimeName": "Theft from Building",
+                "Offense_Name": "LARCENY - FROM BLDG",
+                "place": "Parking Lot - Commercial",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1593,
+                    39.17058
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "19:02:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Grocery/Supermarket",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2044,
+                    39.16974
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "18:47:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9449,
+                    39.06279
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "18:47:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Other",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2091,
+                    39.15006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "18:35:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Mall",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1474,
+                    39.02198
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "18:30:00.000",
+                "NIBRS_CrimeName": "Theft from Building",
+                "Offense_Name": "LARCENY - FROM BLDG",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "18:29:00.000",
+                "NIBRS_CrimeName": "Liquor Law Violations",
+                "Offense_Name": "LIQUOR - POSSESS",
+                "place": "Park",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0961,
+                    38.9882
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "18:26:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "17:08:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "School - Elementary/Secondary",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0127,
+                    39.02029
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "16:38:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Church/Synagogue/Temple",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "15:00:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "LOST PROPERTY",
+                "place": "Residence - Apartment/Condo",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0418,
+                    39.0624
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "15:00:00.000",
+                "NIBRS_CrimeName": "Runaway",
+                "Offense_Name": "JUVENILE - RUNAWAY",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0743,
+                    39.05481
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "14:49:00.000",
+                "NIBRS_CrimeName": "Counterfeiting/Forgery",
+                "Offense_Name": "FORGERY OF CHECKS",
+                "place": "Other/Unknown",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9879,
+                    39.11652
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "14:19:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - NO FORCED ENTRY-RESIDENTIAL",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "14:19:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-RESIDENTIAL",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "13:51:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Department/Discount Store",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0911,
+                    38.9778
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "13:40:00.000",
+                "NIBRS_CrimeName": "Liquor Law Violations",
+                "Offense_Name": "LIQUOR - POSSESS",
+                "place": "Street - Commercial",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0975,
+                    38.98911
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "13:36:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1588,
+                    39.15145
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "13:21:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Grocery/Supermarket",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0858,
+                    38.96084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "13:09:00.000",
+                "NIBRS_CrimeName": "False Pretenses/Swindle/Confidence Game",
+                "Offense_Name": "FRAUD - CONFIDENCE GAME",
+                "place": "Cyberspace",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1546,
+                    38.98887
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "13:06:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "13:04:00.000",
+                "NIBRS_CrimeName": "Identity Theft",
+                "Offense_Name": "IDENTITY THEFT",
+                "place": "Cyberspace",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.057,
+                    39.10609
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "12:51:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "SUDDEN DEATH",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1517,
+                    38.97929
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "11:54:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "LOST PROPERTY",
+                "place": "Other/Unknown",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "11:25:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "Residence - Yard",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1958,
+                    39.1577
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "11:13:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Grocery/Supermarket",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0858,
+                    38.96084
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "11:09:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Mall",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.052,
+                    39.03751
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "10:51:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Street - Bus Stop",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2872,
+                    39.16489
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "10:45:00.000",
+                "NIBRS_CrimeName": "Liquor Law Violations",
+                "Offense_Name": "LIQUOR - POSSESS",
+                "place": "Parking Lot - Commercial",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1595,
+                    39.16028
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "10:36:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0792,
+                    38.98215
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "09:45:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "School - Elementary/Secondary",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "09:38:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "School - Elementary/Secondary",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2492,
+                    39.22672
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "09:15:00.000",
+                "NIBRS_CrimeName": "Counterfeiting/Forgery",
+                "Offense_Name": "FORGERY OF CHECKS",
+                "place": "Bank - ATM",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0857,
+                    39.02404
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "08:45:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Residence - Apartment/Condo",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1971,
+                    39.11413
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "08:30:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "School - Elementary/Secondary",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1728,
+                    39.03055
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "08:09:00.000",
+                "NIBRS_CrimeName": "Destruction/Damage/Vandalism of Property",
+                "Offense_Name": "DAMAGE PROPERTY (DESCRIBE OFFENSE)",
+                "place": "Street - In vehicle",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0482,
+                    39.0483
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "08:09:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0482,
+                    39.0483
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "07:42:00.000",
+                "NIBRS_CrimeName": "Counterfeiting/Forgery",
+                "Offense_Name": "FORGERY OF CHECKS",
+                "place": "Bank/S&L/Credit Union",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1394,
+                    39.0845
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "06:59:00.000",
+                "NIBRS_CrimeName": "Theft from Building",
+                "Offense_Name": "LARCENY - FROM BLDG",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0864,
+                    38.98275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "06:24:00.000",
+                "NIBRS_CrimeName": "Theft of Motor Vehicle Parts or Accessories",
+                "Offense_Name": "LARCENY - AUTO PARTS",
+                "place": "Parking Lot - Commercial",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1118,
+                    39.05324
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "05:18:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MISSING PERSON",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9419,
+                    39.09241
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "03:18:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - SIMPLE",
+                "place": "Residence - Apt Ofc/Storage",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "03:17:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-NONRESIDENTIAL",
+                "place": "Retail - Other",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1925,
+                    39.0994
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "01:35:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-RESIDENTIAL",
+                "place": "Residence - Apartment/Condo",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "00:55:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MISSING PERSON",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9859,
+                    39.01574
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "00:51:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "Street - In vehicle",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2829,
+                    39.18575
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "00:16:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Government Building",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1772,
+                    39.10189
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2024-09-11",
+                "start_time": "00:15:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-NONRESIDENTIAL",
+                "place": "Retail - Clothing",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        }
+    ]
+}

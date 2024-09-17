@@ -50,8 +50,9 @@ function Profile() {
                         onClick={() =>
                            logout({
                               logoutParams: {
-                                 returnTo: "http://localhost:5176",
+                                 returnTo: "http://localhost:5173",
                               },
+                              
                            })
                         }
                         sx={{ color: "white", p: 0 }}
