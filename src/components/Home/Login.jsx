@@ -14,7 +14,7 @@ import Map from "./Map/Map.jsx";
 
 function Login() {
    const { loginWithRedirect, isAuthenticated } = useAuth0();
-   const [about, setAbout] = useState(false);
+   const [about, setAbout] = useState(true);
 
    console.log(isAuthenticated);
 
@@ -69,7 +69,7 @@ function Login() {
                         <Button
                            onClick={() =>
                               loginWithRedirect({
-                                 redirect_uri: "http://localhost:5173/profile", // Redirect back to your SPA after login
+                                 // redirect_uri: "http://localhost:5173/profile", // Redirect back to your SPA after login
                               })
                            }
                            sx={{ color: "white", p: 0 }}

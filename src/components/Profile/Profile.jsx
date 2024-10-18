@@ -50,7 +50,7 @@ function Profile() {
                         onClick={() =>
                            logout({
                               logoutParams: {
-                                 returnTo: "http://localhost:5173",
+                                 returnTo: window.location.origin,
                               },
                               
                            })

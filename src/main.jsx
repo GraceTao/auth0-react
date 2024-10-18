@@ -21,6 +21,7 @@ import Map from "./components/Home/Map/Map.jsx"
 //    </GoogleOAuthProvider>
 // );
 
+
 function App() {
    return (
       <Router>
@@ -36,8 +37,8 @@ function App() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
    <Auth0Provider 
-      domain={import.meta.env.VITE_AUTH0DOMAIN}
-      clientId={import.meta.env.VITE_AUTH0CLIENTID}
+      domain={import.meta.env.VITE_AUTH0DOMAIN1}
+      clientId={import.meta.env.VITE_AUTH0CLIENTID1}
       authorizationParams={{
          redirect_uri: "http://localhost:5173/profile"
        }}
