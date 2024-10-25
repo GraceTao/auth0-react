@@ -1,210 +1,357 @@
-import { useEffect } from 'react';
+import { Mail } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
 
 const About = () => {
-   useEffect(() => {
-      const sections = document.querySelectorAll('.scroll-animation');
-      
-      const observerOptions = {
-         root: null, // viewport
-         threshold: 0.5, // Trigger when 10% of the section is visible
-      };
+  const [isLoaded, setIsLoaded] = useState(false);
 
-      const observer = new IntersectionObserver((entries) => {
-         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-               entry.target.classList.add('in-view');
-            } else {
-               entry.target.classList.remove('in-view');
-            }
-         });
-      }, observerOptions);
+  useEffect(() => {
+    setIsLoaded(true);
 
-      sections.forEach((section) => {
-         observer.observe(section);
-      });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '0px'
+      }
+    );
 
-      return () => {
-         sections.forEach((section) => observer.unobserve(section));
-      };
-   }, []);
+    document.querySelectorAll('.scroll-animate').forEach((elem) => {
+      observer.observe(elem);
+    });
 
-   return (
-      <div style={styles.container}>
-         <section style={styles.heroSection}>
-            <h1 style={styles.heroHeader}>Team GAHSP</h1>
-            <p style={styles.heroSubHeader}>
-               Generating Algorithms for Hot Spots Policing
-            </p>
-         </section>
+    return () => observer.disconnect();
+  }, []);
 
-         {/* Our Mission Section */}
-         <section className="scroll-animation" style={styles.section}>
-            <h2 style={styles.subHeader}>Our Mission</h2>
-            <p style={styles.text}>
-               We develop advanced algorithms for predictive policing, helping law enforcement agencies anticipate and prevent crime in high-risk areas.
-            </p>
-         </section>
+  return (
+    <>
+      <style>
+        {`
+          .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+          }
 
-         {/* What We Do Section */}
-         <section className="scroll-animation" style={styles.section}>
-            <h2 style={styles.subHeader}>What We Do</h2>
-            <p style={styles.text}>
-               By leveraging machine learning and artificial intelligence, we create models that identify crime hotspots, enabling data-driven decisions to improve public safety.
-            </p>
-         </section>
+          .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
 
-         <section style={styles.teamSection}>
-            <h2 style={styles.subHeader}>Meet Our Team</h2>
-            <div style={styles.teamContainer}>
-               <div style={styles.teamMember}>
-                  <img src="https://via.placeholder.com/150" alt="Team Member 1" style={styles.image} />
-                  <p style={styles.teamName}>Aaron Lin</p>
-                  <p style={styles.teamRole}>Back end</p>
-               </div>
-               <div style={styles.teamMember}>
-                  <img src="https://via.placeholder.com/150" alt="Team Member 2" style={styles.image} />
-                  <p style={styles.teamName}>Alex Chen</p>
-                  <p style={styles.teamRole}>Front end</p>
-               </div>
-               <div style={styles.teamMember}>
-                  <img src="https://via.placeholder.com/150" alt="Team Member 3" style={styles.image} />
-                  <p style={styles.teamName}>Andrea Maria</p>
-                  <p style={styles.teamRole}>Research Team</p>
-               </div>
+          .hero-animate {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 1s ease-out;
+          }
+
+          .hero-animate.visible {
+            opacity: 1;
+            transform: scale(1);
+          }
+
+          .team-card {
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          }
+
+          .mint-gradient {
+            background: linear-gradient(90deg, #64ffda 0%, #00ffd5 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+
+          .section-line {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(100, 255, 218, 0) 0%, rgba(100, 255, 218, 0.3) 50%, rgba(100, 255, 218, 0) 100%);
+            margin: 2rem 0;
+          }
+
+          /* General adjustments */
+          body {
+            background-color: #0a192f;
+            color: #ccd6f6;
+            font-family: 'Inter', sans-serif;
+          }
+
+          h1, h2, h3 {
+            text-align: center;
+          }
+
+          p {
+            text-align: center;
+            color: #8892b0;
+          }
+
+          /* Hero Section adjustments */
+          .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            padding-top: 4rem;
+          }
+
+          .hero-section h1 {
+            color: #64ffda;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+          }
+
+          .hero-section h2 {
+            font-size: 3rem;
+            color: #ccd6f6;
+            margin-bottom: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #64ffda;
+            width: 11ch; /* Set to match the length of "Team GAHSP" */
+            animation: typing 2.5s steps(9, end), blink-caret 0.75s step-end infinite;
+          }
+
+          @keyframes typing {
+            from { width: 0; }
+            to { width: 11ch; } /* Matches the number of characters */
+          }
+
+          @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #64ffda; }
+          }
+
+          .hero-section h3 {
+            font-size: 2rem;
+            color: #8892b0;
+            margin-bottom: 1.5rem;
+          }
+
+          .hero-section p {
+            max-width: 700px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+          }
+
+          .hero-section .hero-button {
+            padding: 1rem 2rem;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+          }
+
+          .hero-section .hero-button:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+          }
+
+          /* What We Do Section */
+          .section-title {
+            text-align: center;
+            color: #64ffda;
+            margin-bottom: 2rem;
+          }
+
+          .what-we-do {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+          }
+
+          .what-we-do div {
+            background-color: #112240;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 600px;
+          }
+
+          .what-we-do div:hover {
+            transform: translateY(-10px);
+          }
+
+          /* Team Section */
+          .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            justify-items: center;
+            padding: 2rem;
+          }
+
+          .team-card {
+            background-color: #112240;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+          }
+
+          .team-card img {
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 2px solid #64ffda;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1.5rem;
+          }
+
+          .team-card h3 {
+            font-size: 1.25rem;
+            color: #ccd6f6;
+            margin-bottom: 0.5rem;
+          }
+
+          .team-card p {
+            font-size: 1rem;
+            color: #8892b0;
+          }
+
+          /* Contact Section */
+          .contact-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #112240;
+            border-radius: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+          }
+
+          .contact-button {
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            border: 2px solid #64ffda;
+            color: #64ffda;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+          }
+
+          .contact-button:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+          }
+        `}
+      </style>
+
+      <div className="min-h-screen bg-[#0a192f] text-gray-300">
+        {/* Navigation */}
+        <nav className="p-4 fixed w-full z-50 bg-[#0a192f]/90 backdrop-blur-sm">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" className="text-2xl font-bold text-[#64ffda]">LOGO</a>
+            <div className="space-x-8">
+              <a href="#about" className="text-sm uppercase tracking-widest hover:text-[#64ffda] transition-colors">About</a>
+              <a href="#map" className="text-sm uppercase tracking-widest hover:text-[#64ffda] transition-colors">Map</a>
+              <a href="#login" className="text-sm uppercase tracking-widest hover:text-[#64ffda] transition-colors">Login</a>
             </div>
-         </section>
+          </div>
+        </nav>
 
-         <section style={styles.contactSection}>
-            <h2 style={styles.contactHeader}>Contact Us</h2>
-            <p style={styles.contactText}>Let's work together to make our communities safer.</p>
-            <div style={styles.contactInfo}>
-               <p>Email: <a href="mailto:info@teamgahsp.com" style={styles.contactLink}>info@teamgahsp.com</a></p>
-               <p>Phone: <a href="tel:123-456-7890" style={styles.contactLink}>(123) 456-7890</a></p>
+        {/* Hero Section */}
+        <section className={`hero-section hero-animate ${isLoaded ? 'visible' : ''}`}>
+          <h1>Hello, we are</h1>
+          <h2>Team GAHSP</h2> {/* Typewriter effect applied here */}
+          <h3>Generating Algorithms for Hot Spots Policing</h3>
+          <p>
+            We develop advanced algorithms for predictive policing, helping law enforcement agencies
+            anticipate and prevent crime in high-risk areas.
+          </p>
+          <a href="mailto:info@teamgahsp.com" className="hero-button">
+            <Mail className="w-5 h-5" />
+            <span>Say hi!</span>
+          </a>
+        </section>
+
+        {/* What We Do Section */}
+        <section className="py-20 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto scroll-animate">
+            <h2 className="section-title">What we do</h2>
+            <div className="section-line" />
+            <div className="what-we-do">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-gray-200">Machine Learning</h3>
+                <p className="text-gray-400">
+                  Leveraging advanced AI algorithms to identify patterns and predict potential crime hotspots.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-gray-200">Data Analysis</h3>
+                <p className="text-gray-400">
+                  Processing and analyzing large datasets to enable data-driven decisions for public safety.
+                </p>
+              </div>
             </div>
-         </section>
+          </div>
+        </section>
+
+        {/* Team Section */}
+        <section className="py-20 px-4 md:px-8">
+          <div className="max-w-7xl mx-auto scroll-animate">
+            <h2 className="section-title">Meet our team</h2>
+            <div className="section-line" />
+            <div className="team-grid">
+              {teamMembers.map((member) => (
+                <div key={member.name} className="team-card">
+                  <img 
+                    src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" 
+                    alt={member.name} 
+                  />
+                  <h3>{member.name}</h3>
+                  <p>{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20 px-4 md:px-8">
+          <div className="contact-section">
+            <h2 className="section-title">Contact us</h2>
+            <div className="section-line" />
+            <p>
+              Let's work together to make our communities safer.
+            </p>
+            <a href="mailto:info@teamgahsp.com" className="contact-button">
+              <Mail className="w-5 h-5" />
+              <span>Say hi!</span>
+            </a>
+          </div>
+        </section>
       </div>
-   );
-}
-
-// Inline styles
-const styles = {
-   container: {
-      fontFamily: "'Helvetica Neue', sans-serif",
-      color: '#1a1a1a',
-      backgroundColor: '#fff',
-      margin: '0 auto',
-      padding: '0',
-      maxWidth: '1200px',
-      lineHeight: '1.8',
-   },
-   heroSection: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      backgroundColor: '#f3f4f6',
-      textAlign: 'center',
-   },
-   heroHeader: {
-      fontSize: '4rem',
-      fontWeight: 'bold',
-      marginBottom: '20px',
-      color: '#1a1a1a',
-   },
-   heroSubHeader: {
-      fontSize: '1.5rem',
-      fontWeight: '300',
-      color: '#666',
-   },
-   section: {
-      padding: '60px 20px',
-      textAlign: 'center',
-      opacity: 0,
-      transform: 'translateY(50px)', // Start position for scroll animation
-      transition: 'opacity 1s ease-out, transform 1s ease-out',
-   },
-   subHeader: {
-      fontSize: '2rem',
-      fontWeight: '600',
-      marginBottom: '20px',
-      color: '#1a1a1a',
-   },
-   text: {
-      fontSize: '1.2rem',
-      fontWeight: '300',
-      maxWidth: '800px',
-      margin: '0 auto',
-      color: '#666',
-   },
-   teamSection: {
-      padding: '60px 20px',
-      textAlign: 'center',
-   },
-   teamContainer: {
-      display: 'flex',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      maxWidth: '1200px',
-      margin: '0 auto',
-   },
-   teamMember: {
-      textAlign: 'center',
-      marginBottom: '20px',
-      width: '250px',
-   },
-   image: {
-      width: '150px',
-      height: '150px',
-      borderRadius: '50%',
-      marginBottom: '15px',
-      objectFit: 'cover',
-      border: '3px solid #ccc',
-   },
-   teamName: {
-      fontSize: '1.2rem',
-      fontWeight: '500',
-      color: '#1a1a1a',
-   },
-   teamRole: {
-      fontSize: '1rem',
-      fontWeight: '300',
-      color: '#666',
-   },
-   contactSection: {
-      backgroundColor: '#f3f4f6',
-      padding: '60px 20px',
-      textAlign: 'center',
-   },
-   contactHeader: {
-      fontSize: '2rem',
-      fontWeight: '600',
-      color: '#1a1a1a',
-      marginBottom: '20px',
-   },
-   contactText: {
-      fontSize: '1.2rem',
-      fontWeight: '300',
-      color: '#666',
-      marginBottom: '20px',
-   },
-   contactInfo: {
-      fontSize: '1rem',
-      color: '#1a1a1a',
-   },
-   contactLink: {
-      color: '#1a1a1a',
-      textDecoration: 'underline',
-   },
+    </>
+  );
 };
 
-// Additional CSS (should be in a separate CSS file)
-const globalStyles = `
-   .scroll-animation.in-view {
-      opacity: 1;
-      transform: translateY(0);
-   }
-`;
+const teamMembers = [
+  { name: "Aaron Lin", role: "Back end" },
+  { name: "Alex Chen", role: "Front end" },
+  { name: "Andrea Maria", role: "Research Team" },
+  { name: "Allen Du", role: "Back end" },
+  { name: "Coley Samuels", role: "Research Team" },
+  { name: "Grace Tao", role: "Front End" },
+  { name: "Rios Versace", role: "Research Team" },
+  { name: "Trina Arellano", role: "Front End" },
+  { name: "Zoya Tasneem", role: "Front End" }
+];
 
 export default About;

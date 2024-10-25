@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import "./index.css";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Auth0Provider } from "@auth0/auth0-react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./components/Home/Login.jsx"
-import Profile from "./components/Profile/Profile.jsx"
-import About from "./components/Home/About.jsx"
-import Map from "./components/Home/Map/Map.jsx"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import About from "./components/Home/About.jsx";
+import Login from "./components/Home/Login.jsx";
+import Map from "./components/Home/Map/Map.jsx";
+import Profile from "./components/Profile/Profile.jsx";
 
 // const googleClientId = import.meta.env.VITE_ID;
 // console.log(import.meta.env.VITE_ID);
