@@ -34,7 +34,7 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-appengine@v2
         with:
-          deliverables: auth0-react/app.yaml
+          deliverables: app.yaml
           version: v2
           project_id: "team-gahsp"
       
