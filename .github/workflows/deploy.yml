@@ -21,17 +21,22 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
-        with:
-          project_id: ${{ secrets.GCP_PROJECT_ID }}
-          install_components: 'app-engine'
-
-      - name: Deploy to App Engine
-        run: gcloud app deploy app.yaml --quiet
-      
-      # - name: Deploy to App Engine
-      #   id: deploy
-      #   uses: google-github-actions/deploy-appengine@v2
+      # - name: Set up Google Cloud SDK
+      #   uses: google-github-actions/setup-gcloud@v2
       #   with:
-      #     deliverables: 
+      #     project_id: ${{ secrets.GCP_PROJECT_ID }}
+          # install_components: 'app-engine'
+
+      # - name: Deploy to App Engine
+      #   run: gcloud app deploy app.yaml --quiet
+      
+      - name: Deploy to App Engine
+        id: deploy
+        uses: google-github-actions/deploy-appengine@v2
+        with:
+          deliverables: auth0-react/app.yaml
+          version: v2
+          project_id: "team-gahsp"
+      
+      - name: Test
+        run: 'curl "${{ steps.deploy.outputs.version_url }}"'
