@@ -27,8 +27,6 @@ jobs:
       #     project_id: ${{ secrets.GCP_PROJECT_ID }}
           # install_components: 'app-engine'
 
-      # - name: Deploy to App Engine
-      #   run: gcloud app deploy app.yaml --quiet
       
       - name: Deploy to App Engine
         id: deploy
