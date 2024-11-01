@@ -29,5 +29,5 @@ jobs:
           version: v2
           project_id: "team-gahsp"
       
-      # - name: Test
-      #   run: 'curl "${{ steps.deploy.outputs.version_url }}"'
+      - name: Test
+        run: 'curl "${{ steps.deploy.outputs.version_url }}"'
