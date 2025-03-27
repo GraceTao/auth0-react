@@ -63,7 +63,7 @@ function Profile() {
                </Toolbar>
             </Container>
          </AppBar>
-         <h4>Login success! User profile page yayayayay</h4>
+         <h4>Login success! User profile page</h4>
       </>
    ) : (
       <>
