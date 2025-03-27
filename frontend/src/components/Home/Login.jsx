@@ -49,19 +49,19 @@ function Login() {
                   <Box
                      sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
                   >
-                     {/* {pages.map((page) => (
+                     {pages.map((page) => (
                         <Button
-                           // key={page.name}
-                           // component={Link}
-                           // to={page.path}
-                           // onClick={() => setAbout(true)}
-                           // sx={{ my: 2, color: "white", display: "block" }}
+                           key={page.name}
+                           component={Link}
+                           to={page.path}
+                           onClick={() => setAbout(true)}
+                           sx={{ my: 2, color: "white", display: "block" }}
                         >
                            {page.name}
                         </Button>
-                     ))} */}
-                     <Button onClick={() => setAbout(true)} sx={{ my: 2, color: "white", display: "block" }}>About</Button>
-                     <Button onClick={() => setAbout(false)} sx={{ my: 2, color: "white", display: "block" }}>Map</Button>
+                     ))}
+                     {/* <Button onClick={() => setAbout(true)} sx={{ my: 2, color: "white", display: "block" }}>About</Button>
+                     <Button onClick={() => setAbout(false)} sx={{ my: 2, color: "white", display: "block" }}>Map</Button> */}
                   </Box>
 
                   <Box sx={{ flexGrow: 0 }}>
@@ -81,7 +81,7 @@ function Login() {
                </Toolbar>
             </Container>
          </AppBar>
-         {about ? <About /> : <Map />}
+         {/* {about ? <About /> : <Map />} */}
       </Box>
    );
 }

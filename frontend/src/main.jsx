@@ -41,6 +41,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       clientId={import.meta.env.VITE_AUTH0CLIENTID1}
       authorizationParams={{
          redirect_uri: "https://team-gahsp.uk.r.appspot.com/profile"
+         // redirect_uri: "http://127.0.0.1:5173/profile"
        }}
        >
       <React.StrictMode>
