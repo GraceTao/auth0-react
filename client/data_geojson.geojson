@@ -1,0 +1,1661 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "20:08:00.000",
+                "NIBRS_CrimeName": "Runaway",
+                "Offense_Name": "JUVENILE - RUNAWAY",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "16:23:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Government Building",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2485,
+                    39.1934
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "16:09:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Liquor Store - County",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1536,
+                    39.08862
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "15:20:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-RESIDENTIAL",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "15:00:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-NONRESIDENTIAL",
+                "place": "Rental Storage Facility",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "12:25:00.000",
+                "NIBRS_CrimeName": "False Pretenses/Swindle/Confidence Game",
+                "Offense_Name": "FRAUD (DESCRIBE OFFENSE)",
+                "place": "Bank/S&L/Credit Union",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "11:44:00.000",
+                "NIBRS_CrimeName": "Identity Theft",
+                "Offense_Name": "IDENTITY THEFT",
+                "place": "Cyberspace",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.992,
+                    39.04565
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "11:36:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY - POSTAL",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "10:50:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "OBSCENE COMMUNICATION",
+                "place": "Retail - Other",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1473,
+                    39.02202
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "10:47:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "SUDDEN DEATH",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "10:25:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Liquor Store - Beer & Wine",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1167,
+                    39.05312
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "10:11:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "SUDDEN DEATH",
+                "place": "Hotel/Motel/Etc.",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "10:07:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Grocery/Supermarket",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9906,
+                    39.03978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "09:30:00.000",
+                "NIBRS_CrimeName": "Aggravated Assault",
+                "Offense_Name": "ASSAULT - AGGRAVATED - OTHER",
+                "place": "Residence - Nursing Home",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "08:27:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY - POSTAL",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "07:25:00.000",
+                "NIBRS_CrimeName": "Drug/Narcotic Violations",
+                "Offense_Name": "DRUGS - COCAINE - POSSESS",
+                "place": "Residence - Mobile Home",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "07:25:00.000",
+                "NIBRS_CrimeName": "Drug Equipment Violations",
+                "Offense_Name": "DRUGS - NARCOTIC EQUIP - POSSESS",
+                "place": "Residence - Mobile Home",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "06:05:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "SUDDEN DEATH",
+                "place": "Residence - Nursing Home",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "03:30:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Residence - Driveway",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "03:00:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "Shelter-Mission/Homeless",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1054,
+                    39.04795
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "01:27:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "Parking Lot - Metro",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1494,
+                    39.08657
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "00:30:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "00:28:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "LOST PROPERTY",
+                "place": "Street - Residential",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-28",
+                "start_time": "00:15:00.000",
+                "NIBRS_CrimeName": "Runaway",
+                "Offense_Name": "JUVENILE - RUNAWAY",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "23:48:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY (DESCRIBE OFFENSE)",
+                "place": "School - Elementary/Secondary",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "22:50:00.000",
+                "NIBRS_CrimeName": "Disorderly Conduct",
+                "Offense_Name": "SEX OFFENSE - INDECENT EXPOSURE TO ADULT",
+                "place": "Recreation Center",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2579,
+                    39.19696
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "22:25:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "22:00:00.000",
+                "NIBRS_CrimeName": "Motor Vehicle Theft",
+                "Offense_Name": "AUTO THEFT - VEHICLE THEFT",
+                "place": "Parking Lot - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "21:56:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY (DESCRIBE OFFENSE)",
+                "place": "Restaurant",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2417,
+                    39.17767
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "21:56:00.000",
+                "NIBRS_CrimeName": "Identity Theft",
+                "Offense_Name": "IDENTITY THEFT",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "21:48:00.000",
+                "NIBRS_CrimeName": "Drug Equipment Violations",
+                "Offense_Name": "DRUGS - NARCOTIC EQUIP - POSSESS",
+                "place": "Street - In vehicle",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2245,
+                    39.14068
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "21:11:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - NO FORCED ENTRY-RESIDENTIAL",
+                "place": "Residence - Apartment/Condo",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "20:28:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "20:20:00.000",
+                "NIBRS_CrimeName": "Destruction/Damage/Vandalism of Property",
+                "Offense_Name": "DAMAGE PROPERTY - PRIVATE",
+                "place": "Residence - Apartment/Condo",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "20:00:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "Residence - Nursing Home",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1615,
+                    39.07456
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "19:54:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2239,
+                    39.1133
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "19:41:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL TRANSPORT - ONLY",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "19:35:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "School - Elementary/Secondary",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1307,
+                    39.13833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "19:29:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Street - Residential",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "19:27:00.000",
+                "NIBRS_CrimeName": "Aggravated Assault",
+                "Offense_Name": "ASSAULT - AGGRAVATED - FAMILY-GUN",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "18:19:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "OVERDOSE",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "18:11:00.000",
+                "NIBRS_CrimeName": "Liquor Law Violations",
+                "Offense_Name": "LIQUOR (DESCRIBE OFFENSE)",
+                "place": "Retail - Other",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2055,
+                    39.12688
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:29:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Department/Discount Store",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2448,
+                    39.19829
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:20:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-NONRESIDENTIAL",
+                "place": "Residence - Apartment/Condo",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1146,
+                    39.04498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:20:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Mall",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0519,
+                    39.03756
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:15:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Hospital/Emergency Care Center",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:08:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Residence - Single Family",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:08:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "PUBLIC PEACE - HARASSING COMMUNICATION",
+                "place": "Doctor/Dentist/Vet Office",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:00:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "Field/ Open Space",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "17:00:00.000",
+                "NIBRS_CrimeName": "Drug/Narcotic Violations",
+                "Offense_Name": "DRUGS - MARIJUANA (DESCRIBE OFFENSE)",
+                "place": "Retail - Other",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "16:43:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY (DESCRIBE OFFENSE)",
+                "place": "Grocery/Supermarket",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0987,
+                    38.978
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "16:40:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MISSING PERSON",
+                "place": "Shelter-Mission/Homeless",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0917,
+                    39.04048
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "16:30:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "PUBLIC PEACE - HARASSING COMMUNICATION",
+                "place": "Hospital/Emergency Care Center",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "16:07:00.000",
+                "NIBRS_CrimeName": "Forcible Rape",
+                "Offense_Name": "RAPE - STRONG-ARM",
+                "place": "Residence - Apartment/Condo",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "15:50:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "FUGITIVE FROM MD JURISDICTION",
+                "place": "Jail/Prison",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "15:30:00.000",
+                "NIBRS_CrimeName": "Destruction/Damage/Vandalism of Property",
+                "Offense_Name": "DAMAGE PROPERTY - PRIVATE",
+                "place": "Residence - Driveway",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "15:30:00.000",
+                "NIBRS_CrimeName": "Theft from Building",
+                "Offense_Name": "LARCENY - FROM BLDG",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0914,
+                    38.98712
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "15:11:00.000",
+                "NIBRS_CrimeName": "Identity Theft",
+                "Offense_Name": "IDENTITY THEFT",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "14:45:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY (DESCRIBE OFFENSE)",
+                "place": "Residence - Apartment/Condo",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "14:30:00.000",
+                "NIBRS_CrimeName": "Theft from Building",
+                "Offense_Name": "LARCENY - FROM BLDG",
+                "place": "School - College/University",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "14:14:00.000",
+                "NIBRS_CrimeName": "Runaway",
+                "Offense_Name": "JUVENILE - RUNAWAY",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.2113,
+                    39.17633
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "13:08:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Bank - ATM",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0297,
+                    38.99752
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "13:01:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS - EMERGENCY PETITION",
+                "place": "Residence -Townhouse/Duplex",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "13:00:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "MENTAL ILLNESS",
+                "place": "School - Elementary/Secondary",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1617,
+                    39.07876
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "12:57:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY (DESCRIBE OFFENSE)",
+                "place": "Shelter-Mission/Homeless",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0266,
+                    38.99064
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "12:51:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "School - Elementary/Secondary",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1212,
+                    39.00101
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "12:30:00.000",
+                "NIBRS_CrimeName": "Theft From Motor Vehicle",
+                "Offense_Name": "LARCENY - FROM AUTO",
+                "place": "Parking Garage - Commercial",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1065,
+                    38.96357
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "12:10:00.000",
+                "NIBRS_CrimeName": "Simple Assault",
+                "Offense_Name": "ASSAULT - 2ND DEGREE",
+                "place": "Restaurant",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1163,
+                    39.07529
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "12:00:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "ALL OTHER OFFENSES",
+                "place": "Residence - Yard",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "11:36:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "Residence - Nursing Home",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "11:29:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "RECOVERED PROPERTY - OTHER",
+                "place": "Residence - Apartment/Condo",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "11:03:00.000",
+                "NIBRS_CrimeName": "Trespass of Real Property",
+                "Offense_Name": "TRESPASSING",
+                "place": "Convenience Store",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "10:44:00.000",
+                "NIBRS_CrimeName": "Destruction/Damage/Vandalism of Property",
+                "Offense_Name": "DAMAGE PROPERTY (DESCRIBE OFFENSE)",
+                "place": "Parking Lot - School",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1826,
+                    39.14216
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "09:59:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "SUDDEN DEATH",
+                "place": "Residence - Apartment/Condo",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "09:58:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Drug Store/Pharmacy",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "09:20:00.000",
+                "NIBRS_CrimeName": "Credit Card/Automatic Teller Machine Fraud",
+                "Offense_Name": "FRAUD - ILLEGAL USE CREDIT CARDS",
+                "place": "Retail - Department/Discount Store",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.091,
+                    38.97782
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "09:20:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY (DESCRIBE OFFENSE)",
+                "place": "Parking Lot - Commercial",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.091,
+                    38.97782
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:49:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Grocery/Supermarket",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0857,
+                    38.96079
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:40:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY (DESCRIBE OFFENSE)",
+                "place": "Residence - Yard",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:40:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - NO FORCED ENTRY-RESIDENTIAL",
+                "place": "Residence - Single Family",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:31:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Convenience Store",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9928,
+                    38.99243
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:10:00.000",
+                "NIBRS_CrimeName": "Motor Vehicle Theft",
+                "Offense_Name": "AUTO THEFT - VEHICLE THEFT",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:08:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Retail - Department/Discount Store",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9531,
+                    39.05259
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:06:00.000",
+                "NIBRS_CrimeName": "All Other Offenses",
+                "Offense_Name": "POLICE INFORMATION",
+                "place": "School - Elementary/Secondary",
+                "weight": 1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.1212,
+                    39.00101
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:00:00.000",
+                "NIBRS_CrimeName": "All other Larceny",
+                "Offense_Name": "LARCENY - POSTAL",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "08:00:00.000",
+                "NIBRS_CrimeName": "Pocket/picking",
+                "Offense_Name": "LARCENY - POCKET PICKING",
+                "place": "Other/Unknown",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0972,
+                    39.00262
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "07:37:00.000",
+                "NIBRS_CrimeName": "Shoplifting",
+                "Offense_Name": "LARCENY - SHOPLIFTING",
+                "place": "Convenience Store",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9928,
+                    38.99243
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "04:30:00.000",
+                "NIBRS_CrimeName": "Destruction/Damage/Vandalism of Property",
+                "Offense_Name": "DAMAGE PROPERTY - PRIVATE",
+                "place": "Residence - Apartment/Condo",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "04:05:00.000",
+                "NIBRS_CrimeName": "Theft of Motor Vehicle Parts or Accessories",
+                "Offense_Name": "LARCENY - AUTO PARTS",
+                "place": "Street - Residential",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "03:11:00.000",
+                "NIBRS_CrimeName": "Theft of Motor Vehicle Parts or Accessories",
+                "Offense_Name": "LARCENY - AUTO PARTS",
+                "place": "Parking Lot - Other",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.9614,
+                    39.05552
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "02:06:00.000",
+                "NIBRS_CrimeName": "Destruction/Damage/Vandalism of Property",
+                "Offense_Name": "DAMAGE PROPERTY (DESCRIBE OFFENSE)",
+                "place": "Street - In vehicle",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "start_date": "2025-03-27",
+                "start_time": "01:49:00.000",
+                "NIBRS_CrimeName": "Burglary/Breaking and Entering",
+                "Offense_Name": "BURGLARY - FORCED ENTRY-NONRESIDENTIAL",
+                "place": "Restaurant",
+                "weight": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.0002,
+                    38.96876
+                ]
+            }
+        }
+    ]
+}
