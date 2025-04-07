@@ -21,7 +21,7 @@ imagesAPI.get("/base_hotspots", async (req, res) => {
 
       const imageUrls = imageFiles.map((file) => {
          return {
-            name: file.name.replace(`${folderName}/`, ""),
+            name: file.name.slice(folderName.length+1, folderName.length+11),
             url: `https://storage.googleapis.com/${bucketName}/${file.name}`,
          };
       });
