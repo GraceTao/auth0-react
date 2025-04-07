@@ -48,7 +48,7 @@ export default function DateFilter({ filters, setFilters }) {
                open={startDateOpen} // Show calendar when input is clicked
                onOpen={() => setStartDateOpen(true)} // Open calendar when clicked
                onClose={() => setStartDateOpen(false)} // Close calendar when clicked outside
-               minDate={dayjs('1900-01-01')} // Optional: Set a minimum date
+               minDate={dayjs('2016-07-01')} // Optional: Set a minimum date
                renderInput={(params) => <TextField {...params} fullWidth />}
                sx={{mb: 2}}
             />

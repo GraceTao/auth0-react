@@ -65,12 +65,12 @@
     margin-right: 10px;
 }
 
-#radius-slider {
+/* #radius-slider {
     -webkit-appearance: slider-vertical;
     height: 200px;
     width: 10px;
     z-index: 1000;
-}
+} */
 
 
 .inline-block-child {

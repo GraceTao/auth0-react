@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dbAPI from "./routes/db.js";
 import crimesAPI from "./routes/crimes.js";
+import imagesAPI from "./routes/images.js"
 
 const app = express();
 app.use(express.json());
@@ -29,6 +30,7 @@ const allowedOrigins = [
 
  app.use('/api/db', dbAPI);
  app.use('/api/crimes', crimesAPI);
+ app.use('/api/images', imagesAPI);
 
 
 app.listen(5000, () => console.log("Backend running on port 5000"));

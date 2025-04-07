@@ -1,1 +1,0 @@
-export const crimesAgainst = ["Crimes Against Person", "Crimes Against Property", "Crimes Against Society", "Crime Against Not a Crime"];

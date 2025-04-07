@@ -10,11 +10,12 @@ const BASE_URL = "http://localhost:5000";
 
 const CrimeMap = () => {
    const mapRef = useRef(null);
+   const infoWindowRef = useRef(null);
    const [map, setMap] = useState(null);
    const [geojsonMarkers, setGeoJsonMarkers] = useState(null);
    const [marker, setMarker] = useState(null);
    const [circle, setCircle] = useState(null);
-   const [radius, setRadius] = useState(3);
+   const [radius, setRadius] = useState(0);
    const [scriptLoaded, setScriptLoaded] = useState(false);
    const googleMapsScriptId = "google-maps-script";
    const [filters, setFilters] = useState({
@@ -86,6 +87,11 @@ const CrimeMap = () => {
       const newMap = new window.google.maps.Map(mapRef.current, options);
       setMap(newMap);
       addBoundary(newMap);
+
+      if (!infoWindowRef.current) {
+         infoWindowRef.current = new window.google.maps.InfoWindow();
+      }
+
       displayMarkers(newMap);
       setupSearchBox(newMap);
    };
@@ -110,7 +116,7 @@ const CrimeMap = () => {
    };
 
    const displayMarkers = async (map) => {
-      const infoWindow = new window.google.maps.InfoWindow();
+      const infoWindow = infoWindowRef.current;
 
       // convert each filter that's a list to a string
       const formatFilters = (filters) => {
@@ -132,6 +138,7 @@ const CrimeMap = () => {
 
       const params = formatFilters(filters);
       // console.log(`${BASE_URL}/api/crimes/filter?${params}`);
+      // const res = await fetch(`/api/crimes/filter?${params}`);
       const res = await fetch(`${BASE_URL}/api/crimes/filter?${params}`);
 
       if (!res.ok) {
@@ -142,10 +149,10 @@ const CrimeMap = () => {
       }
 
       const data = await res.json(); // Parse response as JSON
-      // console.log(data);
+      console.log(data);
       // remove existing markers, if any
       if (geojsonMarkers) {
-         console.log("ESDFHLI");
+         infoWindow.close();
          for (var i = 0; i < geojsonMarkers.length; i++) {
             map.data.remove(geojsonMarkers[i]);
          }
@@ -158,8 +165,10 @@ const CrimeMap = () => {
          const feat = event.feature.getProperty("Offense_Name");
          const date = event.feature.getProperty("start_date");
          const crimeAgainst = event.feature.getProperty("Crime_Against");
+
          infoWindow.setContent(`${date}, ${crimeAgainst}, ${feat}`);
          infoWindow.setPosition(event.latLng);
+         infoWindow.setZIndex(2000);
          infoWindow.open(map);
       });
    };
@@ -181,7 +190,7 @@ const CrimeMap = () => {
             searchBox.setBounds(map.getBounds());
          });
 
-         searchBox.addListener("places_changed", () => {
+         searchBox.addListener("places_changed", async () => {
             const places = searchBox.getPlaces();
             if (places.length === 0) return;
 
@@ -198,13 +207,16 @@ const CrimeMap = () => {
             map.setCenter(places[0].geometry.location);
             map.setZoom(10.5);
 
-            const newMarker = new window.google.maps.Marker({
+            const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+
+            const pin = new PinElement({
+               background: "#FBBC04",
+             });
+
+            const newMarker = new AdvancedMarkerElement({
                position: places[0].geometry.location,
                map: map,
-               icon: {
-                  url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
-                  scaledSize: new window.google.maps.Size(50, 50),
-               },
+               content: pin.element,     
                title: places[0].name,
             });
 

@@ -1,5 +1,6 @@
 import express from "express";
 import axios from "axios";
+
 const crimesAPI = express.Router();
 
 const URL = "https://data.montgomerycountymd.gov/resource/icn6-v9z3.json";
@@ -62,7 +63,6 @@ crimesAPI.get("/filter", async (req, res) => {
       whereClauses.push(startDateFilter);
 
       if (end_date) {   
-         console.log("HISHDFILDHF");
          whereClauses.push(`start_date <= '${end_date}'`)
       }
       

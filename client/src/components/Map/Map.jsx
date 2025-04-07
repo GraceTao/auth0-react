@@ -1,4 +1,4 @@
-import Navbar from "../../Navbar";
+import Navbar from "../Navbar";
 import CrimeMap from "./CrimeMap";
 import Filters from "./Filters";
 import { useState } from "react";
