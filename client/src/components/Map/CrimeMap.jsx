@@ -184,7 +184,7 @@ const CrimeMap = () => {
          input.placeholder = "Enter Location";
 
          const searchBox = new window.google.maps.places.SearchBox(input);
-         map.controls[window.google.maps.ControlPosition.TOP_RIGHT].push(input);
+         map.controls[window.google.maps.ControlPosition.TOP_CENTER].push(input);
 
          map.addListener("bounds_changed", () => {
             searchBox.setBounds(map.getBounds());
@@ -267,11 +267,16 @@ const CrimeMap = () => {
             sx={{
                position: "absolute",
                top: "1%",
-               left: "1%",
+               left: "5%",
                zIndex: 1000,
                padding: 2,
                borderRadius: 3,
                boxShadow: 3,
+               backgroundColor: "primary.light",
+               "&:hover": {
+                  boxShadow: 7,
+                  backgroundColor: "primary.dark"
+               },
             }}
          >
             Filter

@@ -1,10 +1,10 @@
-import Navbar from "../Navbar";
+import CollapsibleNavbar from "../CollapsibleNavbar";
 
 const About = () => {
    return (
       <>
-         <Navbar />
-         <p>We are Team GAHSP (Generating Algorithms for Hot Spots Policing). BLAH </p>
+         <CollapsibleNavbar />
+         {/* <p>We are Team GAHSP (Generating Algorithms for Hot Spots Policing). BLAH </p> */}
       </>
    )
 }

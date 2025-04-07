@@ -164,7 +164,7 @@ const ImageCarousel = ({ images }) => {
                width: "100%",
             }}
          >
-            <Typography>Pace</Typography>
+            <Typography>Speed</Typography>
             <Slider
                size="small"
                value={slideDuration}

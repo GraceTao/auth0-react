@@ -1,4 +1,4 @@
-import Navbar from "../Navbar";
+import CollapsibleNavbar from "../CollapsibleNavbar";
 import CrimeMap from "./CrimeMap";
 import Filters from "./Filters";
 import { useState } from "react";
@@ -12,7 +12,7 @@ function Map() {
       <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
          {/* Navbar at the top */}
          <Box sx={{ display: "flex", flexDirection: "column", minWidth: 250 }}>
-            <Navbar />
+            <CollapsibleNavbar />
          </Box>
 
          <Box

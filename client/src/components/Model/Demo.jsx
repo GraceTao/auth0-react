@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Box, Slider, IconButton, Typography, Tooltip } from "@mui/material";
 import ImageCarousel from "./ImageCarousel";
-import Navbar from "../Navbar";
+import CollapsibleNavbar from "../CollapsibleNavbar";
 
 export default function Demo() {
    const [images, setImages] = useState({});
@@ -29,7 +29,7 @@ export default function Demo() {
 
    return (
       <Box>
-         <Navbar />
+         <CollapsibleNavbar isCollapsed={true}/>
          <ImageCarousel images={images} />
       </Box>
       
