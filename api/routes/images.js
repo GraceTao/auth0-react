@@ -4,9 +4,10 @@ const imagesAPI = express.Router();
 
 const storage = new Storage();
 const bucketName = "moco-map-bucket";
-const folderName = "images";
 
-imagesAPI.get("/base_hotspots", async (req, res) => {
+imagesAPI.get("/hotspots", async (req, res) => {
+   const { folderName } = req.query;
+   console.log(`received query: ${folderName}`);
    try {
       const [files] = await storage.bucket(bucketName).getFiles({
          prefix: `${folderName}/`,
@@ -23,6 +24,7 @@ imagesAPI.get("/base_hotspots", async (req, res) => {
          return {
             name: file.name.slice(folderName.length+1, folderName.length+11),
             url: `https://storage.googleapis.com/${bucketName}/${file.name}`,
+            // url: 'https://storage.googleapis.com/moco-map-bucket/Base/2022-03-01.png'
          };
       });
       // console.log(imageUrls);
@@ -33,5 +35,7 @@ imagesAPI.get("/base_hotspots", async (req, res) => {
       res.status(500).send("Error fetching images");
    }
 });
+
+
 
 export default imagesAPI;

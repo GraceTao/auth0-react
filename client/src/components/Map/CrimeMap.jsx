@@ -210,7 +210,7 @@ const CrimeMap = () => {
             const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
 
             const pin = new PinElement({
-               background: "#FBBC04",
+               background: "#29bd48",
              });
 
             const newMarker = new AdvancedMarkerElement({

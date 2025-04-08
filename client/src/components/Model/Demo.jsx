@@ -1,37 +1,68 @@
-import { useState, useEffect } from "react";
-import { Box, Slider, IconButton, Typography, Tooltip } from "@mui/material";
+import { useState, useEffect, useCallback } from "react";
+import {
+   Box,
+   IconButton,
+   Typography,
+   ToggleButtonGroup,
+   ToggleButton,
+} from "@mui/material";
 import ImageCarousel from "./ImageCarousel";
 import CollapsibleNavbar from "../CollapsibleNavbar";
 
 export default function Demo() {
    const [images, setImages] = useState({});
    const [loading, setLoading] = useState(true);
+   const [selectedTab, setSelectedTab] = useState("base");
+   const [error, setError] = useState(null);
 
-   useEffect(() => {
-      const fetchImages = async () => {
-         try {
-            const response = await fetch(
-               "http://localhost:5000/api/images/base_hotspots"
-            );
-            const res = await response.json();
-            setImages(res);
-            setLoading(false);
-         } catch (error) {
-            console.error("Error fetching images:", error);
-            setLoading(false);
-         }
-      };
-
-      fetchImages();
+   const fetchImages = useCallback(async (tab) => {
+      try {
+         console.log("Fetching images for:", tab);
+         const response = await fetch(
+            `http://localhost:5000/api/images/hotspots?folderName=${tab}`
+         );
+         const res = await response.json();
+         setImages((prev) => ({ ...prev, [tab]: res }));
+         return res;
+      } catch (error) {
+         console.error("Error fetching images:", error);
+         setError(error.message);
+         throw error;
+      }
    }, []);
 
-   if (loading) return <div>Loading images...</div>;
+   useEffect(() => {
+      if (!images[selectedTab]) {
+         setLoading(true);
+         fetchImages(selectedTab)
+            .finally(() => setLoading(false));
+      }
+   }, [selectedTab, fetchImages]); // Removed images from dependencies
+
+   if (loading && !images[selectedTab]) {
+      return <Typography>Loading {selectedTab} images...</Typography>;
+   }
 
    return (
-      <Box>
-         <CollapsibleNavbar isCollapsed={true}/>
-         <ImageCarousel images={images} />
-      </Box>
-      
+      <>
+         <CollapsibleNavbar isCollapsed={true} />
+         <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            gap={4}
+         >
+            <ToggleButtonGroup
+               orientation="vertical"
+               value={selectedTab}
+               exclusive
+               onChange={(e, value) => setSelectedTab(value)}
+            >
+               <ToggleButton value="base">Base</ToggleButton>
+               <ToggleButton value="Population">Population</ToggleButton>
+            </ToggleButtonGroup>
+            {images[selectedTab] && <ImageCarousel images={images[selectedTab]} />}
+         </Box>
+      </>
    );
 }
