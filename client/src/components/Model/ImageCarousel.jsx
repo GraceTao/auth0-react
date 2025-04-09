@@ -137,6 +137,7 @@ const ImageCarousel = ({ images }) => {
                justifyContent: "center",
                alignItems: "center",
                gap: 2,
+               mt: "-1.5%"
             }}
          >
             <Tooltip title="Previous" placement="top" arrow>
@@ -162,7 +163,7 @@ const ImageCarousel = ({ images }) => {
                display: "flex",
                justifyContent: "center",
                gap: 2,
-               mt: 1,
+               // mt: 1,
             }}
          >
             <Typography>Speed</Typography>
@@ -200,28 +201,35 @@ const ImageCarousel = ({ images }) => {
                   lg: "90%",
                },
                mx: "auto",
-               // mt: 2,
-               // p: 2,
-               // backgroundColor: "rgba(0,0,0,0.05)",
-               // borderRadius: 1,
             }}
          >
-            <Typography gutterBottom>Filter Date Range</Typography>
-            <Slider
-               size="small"
-               value={dateRange}
-               onChange={handleDateRangeChange}
-               min={0}
-               max={images.length - 1}
-               step={1}
-               valueLabelDisplay="auto"
-               valueLabelFormat={(value) => images[value].name}
+            <Box
                sx={{
-                  "& .MuiSlider-thumb": {
-                     transition: "left 0.1s ease-out",
-                  },
+                  display: "flex",
+                  alignItems: "center", // vertically centers Typography and Slider
+                  gap: 2, // adds spacing between them (you can adjust)
                }}
-            />
+            >
+               <Typography sx={{ whiteSpace: "nowrap" }}>
+                  Filter Date Range
+               </Typography>
+               <Slider
+                  size="small"
+                  value={dateRange}
+                  onChange={handleDateRangeChange}
+                  min={0}
+                  max={images.length - 1}
+                  step={1}
+                  valueLabelDisplay="auto"
+                  valueLabelFormat={(value) => images[value].name}
+                  sx={{
+                     flexGrow: 1, // allows slider to take up remaining horizontal space
+                     "& .MuiSlider-thumb": {
+                        transition: "left 0.1s ease-out",
+                     },
+                  }}
+               />
+            </Box>
          </Box>
       </Box>
    );

@@ -9,18 +9,39 @@ const AuthContext = createContext();
 // AuthProvider component
 export const AuthProvider = ({ children }) => {
    const [currUser, setCurrUser] = useState(null);
+   const [authMessage, setAuthMessage] = useState({
+      open: false,
+      message: "",
+      severity: "success"
+   });
+
+   // Show message helper
+   const showAuthMessage = (message, severity = "success") => {
+      setAuthMessage({
+         open: true,
+         message,
+         severity
+      });
+   };
+
+   // Close message handler
+   const closeAuthMessage = () => {
+      setAuthMessage(prev => ({ ...prev, open: false }));
+   };
 
    // Listen for auth state changes
    useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
-         setCurrUser(user); // Sets the user if logged in, or null if logged out
+         if (user && !currUser) {
+            showAuthMessage(`Welcome, ${user.displayName}!`);
+         }
+         setCurrUser(user);
       });
-      return () => unsubscribe(); // Cleanup listener on unmount
-   }, []);
+      return () => unsubscribe();
+   }, [currUser]);
 
    // Check if user exists, create if not
    const checkAndCreateUserProfile = async (user) => {
-
       try {
          const userRef = doc(db, "users", user.uid);
          const docSnap = await getDoc(userRef);
@@ -43,8 +64,7 @@ export const AuthProvider = ({ children }) => {
       } catch (error) {
          console.log("Error: ", error);
       }
-      
-    };
+   };
 
    // Function to log in with Google
    const googleLogin = async () => {
@@ -52,6 +72,7 @@ export const AuthProvider = ({ children }) => {
          const result = await signInWithPopup(auth, googleProvider);
          await checkAndCreateUserProfile(result.user);
       } catch (error) {
+         // showAuthMessage("Error logging in. Please try again.", "error");
          console.error("Login error:", error);
       }
    };
@@ -60,13 +81,21 @@ export const AuthProvider = ({ children }) => {
    const logout = async () => {
       try {
          await signOut(auth);
+         showAuthMessage("Logout successful!");
       } catch (error) {
+         showAuthMessage("Error logging out. Please try again.", "error");
          console.error("Logout error:", error);
       }
    };
 
    return (
-      <AuthContext.Provider value={{ currUser, googleLogin, logout }}>
+      <AuthContext.Provider value={{ 
+         currUser, 
+         googleLogin, 
+         logout,
+         authMessage,
+         closeAuthMessage
+      }}>
          {children}
       </AuthContext.Provider>
    );
