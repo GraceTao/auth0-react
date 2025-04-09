@@ -32,7 +32,8 @@ export const AuthProvider = ({ children }) => {
              displayName: user.displayName,
              photoURL: user.photoURL,
              createdAt: new Date(),
-             lastLogin: new Date()
+             lastLogin: new Date(),
+             crimeFilters: null
            });
          } else {
            await setDoc(userRef, {

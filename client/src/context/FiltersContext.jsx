@@ -10,7 +10,7 @@ const defaultFilters = {
    crimes_against: [],
    crime_categories: [],
    start_date: dayjs()
-      .subtract(30, "day")
+      .subtract(7, "day")
       .startOf("day")
       .format("YYYY-MM-DDTHH:mm:ss.SSS"),
    end_date: dayjs().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSS"),
@@ -29,11 +29,12 @@ export const FiltersProvider = ({ children }) => {
       const loadUserPreferences = async () => {
          if (currUser) {
             try {
-               const userPrefsRef = doc(db, "userPreferences", currUser.uid);
-               const docSnap = await getDoc(userPrefsRef);
+               const userDocRef = doc(db, "users", currUser.uid);
+               const docSnap = await getDoc(userDocRef);
 
-               if (docSnap.exists() && docSnap.data().filters) {
-                  setFilters(docSnap.data().filters);
+               if (docSnap.exists() && docSnap.data().crimeFilters) {
+                  console.log("here");
+                  setFilters(docSnap.data().crimeFilters);
                }
             } catch (error) {
                console.error("Error loading user preferences:", error);
@@ -52,8 +53,8 @@ export const FiltersProvider = ({ children }) => {
       if (!currUser) return;
 
       try {
-         const userPrefsRef = doc(db, "userPreferences", currUser.uid);
-         await setDoc(userPrefsRef, { filters }, { merge: true });
+         const userDocRef = doc(db, "users", currUser.uid);
+         await setDoc(userDocRef, { crimeFilters: filters }, { merge: true });
       } catch (error) {
          console.error("Error saving preferences:", error);
       }

@@ -34,7 +34,6 @@ function Navbar({ isCollapsed, handleCollapse }) {
 
    const handleLogout = () => {
       logout();
-      navigate("/");
    };
 
    return (
@@ -132,31 +131,53 @@ function Navbar({ isCollapsed, handleCollapse }) {
                            component={Link}
                            to={page.path}
                            onClick={handleCloseNavMenu}
-                           sx={{ my: 2, color: "white", display: "block" }}
+                           sx={{
+                              my: 2,
+                              color: "white",
+                              display: "block",
+                              "&:hover": {
+                                 color: "lightgray",
+                              },
+                           }}
                         >
                            {page.name}
                         </Button>
                      ))}
                   </Box>
                   <Box sx={{ flexGrow: 0 }}>
-                     <Button
-                        onClick={currUser ? handleLogout : googleLogin}
-                        sx={{ color: "white", p: 0 }}
-                     >
-                        {currUser ? "Logout" : "Login"}
-                     </Button>
-                     {/* <IconButton
-                        onClick={handleCollapse}
+                     <Box
                         sx={{
-                           // position: "absolute",
-                           // bottom: 8,
-                           // left: 8,
-                           color: "white",
-                           zIndex: 10,
+                           display: "flex",
+                           alignItems: "center",
+                           gap: 1.5,
                         }}
                      >
-                        {isCollapsed ? <ExpandMore /> : <ExpandLess />}
-                     </IconButton> */}
+                        {currUser && (
+                           <Box
+                              component="img"
+                              src={currUser.photoURL}
+                              alt={currUser.displayName}
+                              sx={{
+                                 width: 36,
+                                 height: 36,
+                                 borderRadius: "50%",
+                                 objectFit: "cover",
+                              }}
+                           />
+                        )}
+                        <Button
+                           onClick={currUser ? handleLogout : googleLogin}
+                           sx={{
+                              color: "white",
+                              p: 0,
+                              "&:hover": {
+                                 color: "lightgray",
+                              },
+                           }}
+                        >
+                           {currUser ? "Logout" : "Login"}
+                        </Button>
+                     </Box>
                   </Box>
                </Toolbar>
             </Container>
