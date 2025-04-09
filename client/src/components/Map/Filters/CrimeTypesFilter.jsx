@@ -1,41 +1,30 @@
-import { Box, FormGroup, FormControlLabel, Checkbox, FormLabel } from "@mui/material";
-import { crimesAgainst } from "./nibrs.js";
+// CrimeTypesFilter.js
+import { crimesAgainst } from "../../../nibrs";
 import { useFilters } from "../../../context/FiltersContext";
+import CollapsibleCheckboxGroup from "./CollapsibleCheckboxGroup";
 
 export default function CrimeTypesFilter() {
-   const { filters, setFilters } = useFilters();
-   
-   // Initialize checked state based on current filters
-   const isChecked = (label) => filters.crimes_against.includes(label);
+  const { filters, setFilters } = useFilters();
+  
+  // Convert crimesAgainst object to options array
+  const crimeOptions = Object.keys(crimesAgainst).map(key => ({
+    value: key,
+    label: key
+  }));
 
-   const handleCheck = (label) => {
-      setFilters(prevFilters => {
-         const currentSelection = prevFilters.crimes_against;
-         const updatedSelection = currentSelection.includes(label)
-            ? currentSelection.filter(item => item !== label)  // Remove if exists
-            : [...currentSelection, label];  // Add if doesn't exist
+  const handleCrimeSelection = (newSelection) => {
+    setFilters(prevFilters => ({
+      ...prevFilters,
+      crimes_against: newSelection
+    }));
+  };
 
-         return { ...prevFilters, crimes_against: updatedSelection };
-      });
-   };
-
-   return (
-      <Box>
-         <FormLabel component="legend">Type of Crime</FormLabel>
-         <FormGroup>
-            {Object.keys(crimesAgainst).map((label) => (
-               <FormControlLabel
-                  key={label}
-                  control={
-                     <Checkbox 
-                        checked={isChecked(label)}
-                        onChange={() => handleCheck(label)}
-                     />
-                  }
-                  label={label}
-               />
-            ))}
-         </FormGroup>
-      </Box>
-   );
+  return (
+    <CollapsibleCheckboxGroup
+      title="Type of Crime"
+      options={crimeOptions}
+      selectedValues={filters.crimes_against}
+      onSelectionChange={handleCrimeSelection}
+    />
+  );
 }

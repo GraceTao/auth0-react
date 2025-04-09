@@ -137,3 +137,12 @@ export const crimesAgainst = {
       ]
    }
 };
+
+export const policeDistricts = [
+   "ROCKVILLE",
+   "BETHESDA",
+   "SILVER SPRING",
+   "WHEATON",
+   "GERMANTOWN",
+   "MONTGOMERY VILLAGE"
+]

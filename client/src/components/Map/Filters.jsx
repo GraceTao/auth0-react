@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import CrimeTypesFilter from "./Filters/CrimeTypesFilter";
 import DateFilter from "./Filters/DateFilter";
+import PoliceDistrictFilter from "./Filters/PoliceDistrictFilter";
 import { useState } from "react";
 import { useFilters } from "../../context/FiltersContext";
 import { useAuth } from "../../context/AuthContext";
@@ -18,7 +19,11 @@ export default function Filters({ openFilter, setOpenFilter }) {
    const { currUser } = useAuth();
    const { savePreferences, resetFilters, setApplyFilters } = useFilters();
 
-   const [alert, setAlert] = useState({ open: false, severity: "success", message: "" });
+   const [alert, setAlert] = useState({
+      open: false,
+      severity: "success",
+      message: "",
+   });
 
    const handleClose = () => {
       setOpenFilter(false);
@@ -58,16 +63,28 @@ export default function Filters({ openFilter, setOpenFilter }) {
             "& .MuiDialog-paper": { padding: "1%", maxWidth: "600px" },
          }}
       >
-         <Box display="flex" flexDirection="column" alignItems="center" width="100%">
+         <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            width="100%"
+         >
             <DialogTitle>Filter Crimes (Limit 1000)</DialogTitle>
             <Box display="flex" justifyContent="center" width="100%">
-               <CrimeTypesFilter />
+               <Box display="flex" flexDirection="column" alignItems="flex-start" gap={2}>
+                  <CrimeTypesFilter />
+                  <PoliceDistrictFilter />
+               </Box>
+
                <DateFilter />
             </Box>
 
-
-      
-            <Box display="flex" justifyContent="space-evenly" width="100%" mt={2}>
+            <Box
+               display="flex"
+               justifyContent="space-evenly"
+               width="100%"
+               mt={2}
+            >
                <Button onClick={handleSavePreferences}>Save Preferences</Button>
                <Button variant="contained" onClick={handleClose}>
                   Apply

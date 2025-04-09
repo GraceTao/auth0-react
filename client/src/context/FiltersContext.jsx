@@ -4,17 +4,18 @@ import { db } from "../firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import dayjs from "dayjs";
 import { useAuth } from "./AuthContext";
+import { crimesAgainst, policeDistricts } from "../nibrs";
 
-// Default time range is [today - (30 days), today]
+// Default time range is [today - (7 days), today]
 const defaultFilters = {
-   crimes_against: [],
+   crimes_against: Object.keys(crimesAgainst),
    crime_categories: [],
    start_date: dayjs()
       .subtract(7, "day")
       .startOf("day")
       .format("YYYY-MM-DDTHH:mm:ss.SSS"),
    end_date: dayjs().endOf("day").format("YYYY-MM-DDTHH:mm:ss.SSS"),
-   police_district: [],
+   police_district: policeDistricts,
 };
 
 const FiltersContext = createContext();
