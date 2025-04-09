@@ -1,43 +1,38 @@
 import { Box, FormGroup, FormControlLabel, Checkbox, FormLabel } from "@mui/material";
 import { crimesAgainst } from "./nibrs.js";
-import { useState, useEffect } from "react";
+import { useFilters } from "../../../context/FiltersContext";
 
-export default function CrimeTypesFilter({ setFilters }) {
-   // Initialize the checked state based on the length of crimesAgainst
-   const [checked, setChecked] = useState(new Array(crimesAgainst.length).fill(false)); 
+export default function CrimeTypesFilter() {
+   const { filters, setFilters } = useFilters();
+   
+   // Initialize checked state based on current filters
+   const isChecked = (label) => filters.crimes_against.includes(label);
 
-   const onCheck = (index, label) => {
-      setChecked((prevChecked) => {
-         const newChecked = [...prevChecked]; // Create a shallow copy of the array
-         newChecked[index] = !newChecked[index]; // Toggle the value at the specific index
-         return newChecked; // Return the new array to update the state
-      });
+   const handleCheck = (label) => {
+      setFilters(prevFilters => {
+         const currentSelection = prevFilters.crimes_against;
+         const updatedSelection = currentSelection.includes(label)
+            ? currentSelection.filter(item => item !== label)  // Remove if exists
+            : [...currentSelection, label];  // Add if doesn't exist
 
-      // Add or remove the label from the "crimes_against" array in the state
-      setFilters((prevFilters) => {
-         const updatedCrimes = prevFilters["crimes_against"].includes(label)
-            ? prevFilters["crimes_against"].filter(item => item !== label)  // Remove if already checked
-            : [...prevFilters["crimes_against"], label]; // Add if not checked
-
-         return { ...prevFilters, crimes_against: updatedCrimes };
+         return { ...prevFilters, crimes_against: updatedSelection };
       });
    };
-   
-   // // Optional: If crimesAgainst changes dynamically, update the checked array
-   // useEffect(() => {
-   //    setChecked(new Array(crimesAgainst.length).fill(false));
-   // }, [crimesAgainst]);
 
    return (
       <Box>
-         <FormLabel>Type of Crime</FormLabel>
+         <FormLabel component="legend">Type of Crime</FormLabel>
          <FormGroup>
-            {crimesAgainst.map((label, index) => (
+            {Object.keys(crimesAgainst).map((label) => (
                <FormControlLabel
                   key={label}
-                  control={<Checkbox onChange={() => onCheck(index, label)} />}
+                  control={
+                     <Checkbox 
+                        checked={isChecked(label)}
+                        onChange={() => handleCheck(label)}
+                     />
+                  }
                   label={label}
-                  checked={checked[index]} // This controls the checkbox state
                />
             ))}
          </FormGroup>

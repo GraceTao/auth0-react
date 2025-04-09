@@ -4,7 +4,8 @@ import "./Map.css";
 import RadiusSlider from "./RadiusSlider";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import Filters from "./Filters";
-import dayjs from 'dayjs';
+import { useFilters } from "../../context/FiltersContext";
+import dayjs from "dayjs";
 
 const BASE_URL = "http://localhost:5000";
 
@@ -18,53 +19,38 @@ const CrimeMap = () => {
    const [radius, setRadius] = useState(0);
    const [scriptLoaded, setScriptLoaded] = useState(false);
    const googleMapsScriptId = "google-maps-script";
-   const [filters, setFilters] = useState({
-      crimes_against: [],
-      crime_categories: [],
-      start_date: dayjs().subtract(30, 'day').startOf('day').format("YYYY-MM-DDTHH:mm:ss.SSS"),
-      end_date: dayjs().endOf('day').format("YYYY-MM-DDTHH:mm:ss.SSS"),
-      police_district: [],
-   });
    const [openFilter, setOpenFilter] = useState(false);
-   const [applyFilters, setApplyFilters] = useState(false);
+
+   const { filters, setFilters, applyFilters, setApplyFilters } = useFilters();
 
    useEffect(() => {
-      if (applyFilters && map) {
+      if (applyFilters && !openFilter && map) {
          displayMarkers(map);
-         setApplyFilters(false); // Reset after applying
+         setApplyFilters(false);
       }
-   }, [applyFilters, map]);
+   }, [applyFilters, openFilter, map]);
 
    useEffect(() => {
       const loadGoogleMapsScript = () => {
-         // Check if script is already loaded
          if (window.google && window.google.maps) {
             setScriptLoaded(true);
             return;
          }
 
-         // Check if script is already in the DOM
-         if (document.getElementById(googleMapsScriptId)) {
-            return;
-         }
+         if (document.getElementById(googleMapsScriptId)) return;
 
-         // Load Google Maps API script with async loading pattern
          const script = document.createElement("script");
          script.id = googleMapsScriptId;
          script.src = `https://maps.googleapis.com/maps/api/js?key=${
             import.meta.env.VITE_GOOGLEMAPS_APIKEY
-         }&libraries=places&loading=async&callback=initMap`; // Use callback to ensure it's loaded
+         }&libraries=places&loading=async&callback=initMap`;
          script.async = true;
          script.defer = true;
          document.head.appendChild(script);
       };
 
       loadGoogleMapsScript();
-
-      // Initialize Google Map only after script is loaded
-      window.initMap = () => {
-         setScriptLoaded(true);
-      };
+      window.initMap = () => setScriptLoaded(true);
    }, []);
 
    useEffect(() => {
@@ -121,20 +107,19 @@ const CrimeMap = () => {
       // convert each filter that's a list to a string
       const formatFilters = (filters) => {
          const formatted = {};
-      
+
          Object.entries(filters).forEach(([key, value]) => {
             if (Array.isArray(value) && value.length > 0) {
                formatted[key] = value.join(",");
             } else if (value) {
                formatted[key] = value; // Keep non-null values
             } else {
-               formatted[key] = '';
+               formatted[key] = "";
             }
          });
-      
+
          return new URLSearchParams(formatted);
       };
-      
 
       const params = formatFilters(filters);
       // console.log(`${BASE_URL}/api/crimes/filter?${params}`);
@@ -149,7 +134,7 @@ const CrimeMap = () => {
       }
 
       const data = await res.json(); // Parse response as JSON
-      console.log(data);
+
       // remove existing markers, if any
       if (geojsonMarkers) {
          infoWindow.close();
@@ -184,7 +169,9 @@ const CrimeMap = () => {
          input.placeholder = "Enter Location";
 
          const searchBox = new window.google.maps.places.SearchBox(input);
-         map.controls[window.google.maps.ControlPosition.TOP_CENTER].push(input);
+         map.controls[window.google.maps.ControlPosition.TOP_CENTER].push(
+            input
+         );
 
          map.addListener("bounds_changed", () => {
             searchBox.setBounds(map.getBounds());
@@ -207,16 +194,17 @@ const CrimeMap = () => {
             map.setCenter(places[0].geometry.location);
             map.setZoom(10.5);
 
-            const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
+            const { AdvancedMarkerElement, PinElement } =
+               await google.maps.importLibrary("marker");
 
             const pin = new PinElement({
                background: "#29bd48",
-             });
+            });
 
             const newMarker = new AdvancedMarkerElement({
                position: places[0].geometry.location,
                map: map,
-               content: pin.element,     
+               content: pin.element,
                title: places[0].name,
             });
 
@@ -255,42 +243,48 @@ const CrimeMap = () => {
 
    return (
       <div className="map-container">
-         <Box
-            ref={mapRef}
-            className="map"
-            // sx={{ width: "100%", height: "100%" }}
-         />
+         <Box ref={mapRef} className="map" />
 
          <Button
             variant="contained"
             onClick={() => setOpenFilter(!openFilter)}
             sx={{
                position: "absolute",
-               top: "1%",
-               left: "5%",
-               zIndex: 1000,
-               padding: 2,
+               top: {
+                  xs: "2%", // on extra-small screens
+                  sm: "2%",
+                  md: "1%", // on medium and up
+               },
+               left: {
+                  xs: "5%",
+                  sm: "7%",
+               },
+               fontSize: {
+                  xs: "0.75rem", // smaller font on phones
+                  sm: "0.875rem",
+                  md: "1rem",
+               },
+               padding: {
+                  xs: 1,
+                  sm: 1.2,
+                  md: 1.5,
+               },
                borderRadius: 3,
                boxShadow: 3,
-               backgroundColor: "primary.light",
+               backgroundColor: "primary.dark",
                "&:hover": {
                   boxShadow: 7,
-                  backgroundColor: "primary.dark"
+                  backgroundColor: "primary.dark",
                },
             }}
          >
             Filter
-            <FilterAltIcon sx={{ ml: 2 }} />
+            <FilterAltIcon sx={{ ml: 1 }} />
          </Button>
 
-         <Filters
-            filters={filters}
-            setFilters={setFilters}
-            openFilter={openFilter}
-            setOpenFilter={setOpenFilter}
-            setApplyFilters={setApplyFilters}
-         />
-         
+         {/* Simplified Filters component - no need to pass setApplyFilters */}
+         <Filters openFilter={openFilter} setOpenFilter={setOpenFilter} />
+
          <Box
             sx={{
                position: "absolute",

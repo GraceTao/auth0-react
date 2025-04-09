@@ -64,6 +64,7 @@ nibrs_offense_code,nibrs_offense_type,nibrs_offense_category,nibrs_crime_against
 90F,"90F Family Offenses, Nonviolent","Family Offenses, Nonviolent",Crimes against society
 90G,90G Liquor Law Violations (except Driving Under the Influence and Drunkenness),Liquor Law Violations (except Driving Under the Influence and Drunkenness),Crimes against society
 90H,90H Peeping Tom,Peeping Tom,Crimes against society
+90I, 90I Runaway,Runaway,Crimes against not a crime
 90J,90J Trespass of Real Property,Trespass of Real Property,Crimes against society
 90Z,90Z All Other Offenses,All Other Offenses,All Other Offenses
 99X,99X Non-Categorisable Offenses,Excluded cases,Excluded cases

@@ -70,38 +70,42 @@ const ImageCarousel = ({ images }) => {
    };
 
    return (
-      <Box sx={{ maxWidth: "100%", mx: "auto", position: "relative" }}>
-         <Typography
-            variant="h6"
+      <Box
+         sx={{
+            mt: {
+               xs: "3%",
+               sm: "2%",
+               md: "1%",
+               lg: "0%",
+            },
+         }}
+      >
+         <Box
             sx={{
-               position: "absolute",
-               top: {
-                  sm: "0%",
-                  md: "2%",
-                  lg: "5%",
-               },
-               left: {
-                  sm: "0%",
-                  md: "10%",
-                  lg: "20%",
-               },
-               zIndex: 1,
+               display: "inline-block", // shrink to fit content
                backgroundColor: "rgba(0, 0, 0, 0.5)",
                color: "white",
                px: 2,
                py: 1,
                borderRadius: 1,
-               fontSize: {
-                  xs: "0.875rem",
-                  sm: "1rem",
-                  md: "1.125rem",
-                  lg: "1.2rem",
-               },
-               fontWeight: 500,
             }}
          >
-            Date: {filteredImages[currentIndex]?.name || "Loading..."}
-         </Typography>
+            <Typography
+               variant="h6"
+               sx={{
+                  fontSize: {
+                     xs: "0.8rem",
+                     sm: "0.95rem",
+                     md: "1.1rem",
+                     lg: "1.2rem",
+                  },
+                  fontWeight: 500,
+                  whiteSpace: "nowrap", // optional: prevents text wrap
+               }}
+            >
+               Date: {filteredImages[currentIndex]?.name || "Loading..."}
+            </Typography>
+         </Box>
 
          {/* Current Image Display */}
          <Box
@@ -125,8 +129,6 @@ const ImageCarousel = ({ images }) => {
                }
             }}
          />
-
-         
 
          {/* Navigation Controls */}
          <Box
@@ -161,24 +163,24 @@ const ImageCarousel = ({ images }) => {
                justifyContent: "center",
                gap: 2,
                mt: 1,
-               width: "100%",
             }}
          >
             <Typography>Speed</Typography>
             <Slider
                size="small"
-               value={slideDuration}
-               onChange={(e, newValue) => setSlideDuration(newValue)}
+               value={3100 - slideDuration}
+               onChange={(e, newValue) => setSlideDuration(3100 - newValue)}
                min={100}
                max={3000}
                step={100}
-               valueLabelDisplay="off"
+               valueLabelDisplay="auto"
+               valueLabelFormat={(value) => `${(3100 - value) / 1000}s`}
                sx={{
                   width: {
-                     xs: "80%",
+                     xs: "70%",
                      sm: "60%",
-                     md: "40%",
-                     lg: "20%",
+                     md: "50%",
+                     lg: "40%",
                   },
                   "& .MuiSlider-thumb": {
                      width: 12,
@@ -192,9 +194,10 @@ const ImageCarousel = ({ images }) => {
          <Box
             sx={{
                width: {
-                  sm: "90%",
-                  md: "70%",
-                  lg: "50%",
+                  xs: "100%",
+                  sm: "100%",
+                  md: "95%",
+                  lg: "90%",
                },
                mx: "auto",
                // mt: 2,
@@ -220,8 +223,6 @@ const ImageCarousel = ({ images }) => {
                }}
             />
          </Box>
-
-         
       </Box>
    );
 };

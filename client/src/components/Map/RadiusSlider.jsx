@@ -29,7 +29,7 @@ export default function RadiusSlider ({ circle, setRadius, map }) {
    return (
       <Slider
          defaultValue={3}
-         valueLabelDisplay="auto"
+         valueLabelDisplay="on"
          step={0.5}
          min={0}
          max={50}

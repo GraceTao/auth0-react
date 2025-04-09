@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import ImageCarousel from "./ImageCarousel";
 import CollapsibleNavbar from "../CollapsibleNavbar";
+import Info from "../Info";
 
 export default function Demo() {
    const [images, setImages] = useState({});
@@ -44,13 +45,19 @@ export default function Demo() {
    }
 
    return (
-      <>
+      <Box
+      >
          <CollapsibleNavbar isCollapsed={true} />
+         <Box sx={{ flex: 1, position: "relative" }}>
+            <Info>
+               <Typography>Hello!</Typography>
+            </Info>
+         </Box>
          <Box
             display="flex"
             justifyContent="center"
             alignItems="center"
-            gap={4}
+            gap="2%"
          >
             <ToggleButtonGroup
                orientation="vertical"
@@ -59,10 +66,11 @@ export default function Demo() {
                onChange={(e, value) => setSelectedTab(value)}
             >
                <ToggleButton value="base">Base</ToggleButton>
-               <ToggleButton value="Population">Population</ToggleButton>
+               <ToggleButton value="population">Population</ToggleButton>
+               <ToggleButton value="race">Race</ToggleButton>
             </ToggleButtonGroup>
             {images[selectedTab] && <ImageCarousel images={images[selectedTab]} />}
          </Box>
-      </>
+      </Box>
    );
 }
