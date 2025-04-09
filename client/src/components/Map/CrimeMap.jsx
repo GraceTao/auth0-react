@@ -6,6 +6,8 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import Filters from "./Filters";
 import { useFilters } from "../../context/FiltersContext";
 import dayjs from "dayjs";
+import { formatURL } from "../../tools";
+import { useAuth } from "../../context/AuthContext";
 
 const BASE_URL = "http://localhost:5000";
 
@@ -21,14 +23,44 @@ const CrimeMap = () => {
    const googleMapsScriptId = "google-maps-script";
    const [openFilter, setOpenFilter] = useState(false);
 
-   const { filters, setFilters, applyFilters, setApplyFilters } = useFilters();
+   const { filters, applyFilters, setApplyFilters, areFiltersLoading } = useFilters();
+   const { currUser } = useAuth();
+
+   const clearMarkers = useCallback(() => {
+      if (map && geojsonMarkers) {
+         infoWindowRef.current?.close();
+         map.data.forEach((feature) => map.data.remove(feature));
+         setGeoJsonMarkers(null);
+      }
+   }, [map, geojsonMarkers]);
 
    useEffect(() => {
-      if (applyFilters && !openFilter && map) {
-         displayMarkers(map);
-         setApplyFilters(false);
+      if (applyFilters && map && !openFilter) {
+        console.log("Applying filters");
+        displayMarkers(map);
+        setApplyFilters(false);
       }
-   }, [applyFilters, openFilter, map]);
+    }, [applyFilters, openFilter, map]);
+
+    useEffect(() => {
+      // Only run when:
+      // 1. We have a user
+      // 2. Map is loaded
+      // 3. Filters are not loading
+      // 4. We actually have filters
+      if (currUser && map && !areFiltersLoading && filters) {
+         console.log("Loading saved preferences with filters:", filters);
+         displayMarkers(map);
+      }
+   }, [currUser, map, areFiltersLoading]); 
+
+   // useEffect(() => {
+   //    if (currUser && filters && map) {
+   //       console.log("good");
+   //       displayMarkers(map);
+   //       setApplyFilters(false);
+   //    }
+   // }, [currUser,map]);
 
    useEffect(() => {
       const loadGoogleMapsScript = () => {
@@ -101,61 +133,75 @@ const CrimeMap = () => {
       };
    };
 
+   // const displayMarkers = async (map) => {
+   //    const infoWindow = infoWindowRef.current;
+
+   //    const params = formatURL(filters);
+
+   //    // console.log(`${BASE_URL}/api/crimes/filter?${params}`);
+   //    // const res = await fetch(`/api/crimes/filter?${params}`);
+   //    const res = await fetch(`${BASE_URL}/api/crimes/filter?${params}`);
+
+   //    if (!res.ok) {
+   //       console.error("Failed to fetch:", res.status, res.statusText);
+   //       const text = await res.text(); // Log the actual response text
+   //       console.error("Response text:", text);
+   //       return;
+   //    }
+
+   //    const data = await res.json(); // Parse response as JSON
+
+   //    // remove existing markers, if any
+   //    if (geojsonMarkers) {
+   //       infoWindow.close();
+   //       for (var i = 0; i < geojsonMarkers.length; i++) {
+   //          map.data.remove(geojsonMarkers[i]);
+   //       }
+   //    }
+
+   //    const markers = map.data.addGeoJson(data);
+   //    setGeoJsonMarkers(markers);
+
+   //    map.data.addListener("click", function (event) {
+   //       const feat = event.feature.getProperty("Offense_Name");
+   //       const date = event.feature.getProperty("start_date");
+   //       const crimeAgainst = event.feature.getProperty("Crime_Against");
+
+   //       infoWindow.setContent(`${date}, ${crimeAgainst}, ${feat}`);
+   //       infoWindow.setPosition(event.latLng);
+   //       infoWindow.setZIndex(2000);
+   //       infoWindow.open(map);
+   //    });
+   // };
+
    const displayMarkers = async (map) => {
-      const infoWindow = infoWindowRef.current;
+      try {
+         // Clear existing markers first
+         await clearMarkers();
 
-      // convert each filter that's a list to a string
-      const formatFilters = (filters) => {
-         const formatted = {};
+         const params = formatURL(filters);
+         const res = await fetch(`${BASE_URL}/api/crimes/filter?${params}`);
 
-         Object.entries(filters).forEach(([key, value]) => {
-            if (Array.isArray(value) && value.length > 0) {
-               formatted[key] = value.join(",");
-            } else if (value) {
-               formatted[key] = value; // Keep non-null values
-            } else {
-               formatted[key] = "";
-            }
+         if (!res.ok) throw new Error("Failed to fetch data");
+
+         const data = await res.json();
+         const markers = map.data.addGeoJson(data);
+         setGeoJsonMarkers(markers);
+
+         // Reattach click listeners
+         map.data.addListener("click", (event) => {
+            const feat = event.feature.getProperty("Offense_Name");
+            const date = event.feature.getProperty("start_date");
+            const crimeAgainst = event.feature.getProperty("Crime_Against");
+            infoWindowRef.current.setContent(
+               `${date}, ${crimeAgainst}, ${feat}`
+            );
+            infoWindowRef.current.setPosition(event.latLng);
+            infoWindowRef.current.open(map);
          });
-
-         return new URLSearchParams(formatted);
-      };
-
-      const params = formatFilters(filters);
-      // console.log(`${BASE_URL}/api/crimes/filter?${params}`);
-      // const res = await fetch(`/api/crimes/filter?${params}`);
-      const res = await fetch(`${BASE_URL}/api/crimes/filter?${params}`);
-
-      if (!res.ok) {
-         console.error("Failed to fetch:", res.status, res.statusText);
-         const text = await res.text(); // Log the actual response text
-         console.error("Response text:", text);
-         return;
+      } catch (error) {
+         console.error("Error displaying markers:", error);
       }
-
-      const data = await res.json(); // Parse response as JSON
-
-      // remove existing markers, if any
-      if (geojsonMarkers) {
-         infoWindow.close();
-         for (var i = 0; i < geojsonMarkers.length; i++) {
-            map.data.remove(geojsonMarkers[i]);
-         }
-      }
-
-      const markers = map.data.addGeoJson(data);
-      setGeoJsonMarkers(markers);
-
-      map.data.addListener("click", function (event) {
-         const feat = event.feature.getProperty("Offense_Name");
-         const date = event.feature.getProperty("start_date");
-         const crimeAgainst = event.feature.getProperty("Crime_Against");
-
-         infoWindow.setContent(`${date}, ${crimeAgainst}, ${feat}`);
-         infoWindow.setPosition(event.latLng);
-         infoWindow.setZIndex(2000);
-         infoWindow.open(map);
-      });
    };
 
    const setupSearchBox = useCallback(
