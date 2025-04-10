@@ -10,6 +10,7 @@ import { formatURL } from "../../tools";
 import { useAuth } from "../../context/AuthContext";
 
 const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "";
 
 const CrimeMap = () => {
    const mapRef = useRef(null);

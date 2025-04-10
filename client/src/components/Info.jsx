@@ -3,6 +3,7 @@ import {
    Dialog,
    DialogTitle,
    DialogContent,
+   DialogActions,
    Button,
    IconButton,
 } from "@mui/material";
@@ -66,6 +67,7 @@ export default function Info({ children, title }) {
                   overflowY: "auto", // Scrollbar will be at screen edge
                   display: "flex",
                   justifyContent: "center",
+                  backgroundColor: "primary.dark",
                }}
             >
                {/* Your content container with max-width */}
@@ -74,6 +76,7 @@ export default function Info({ children, title }) {
                   flexDirection="column"
                   width="100%"
                   maxWidth={900}
+                  backgroundColor="white"
                   sx={{
                      width: {
                         xs: "95%",
@@ -82,7 +85,8 @@ export default function Info({ children, title }) {
                      },
                      height: "fit-content", // Let content determine height
                      minHeight: "100%", // But at least full height
-                     py: 2, // Add some vertical padding
+                     py: 2,
+                     px: 3
                   }}
                >
                   {/* Header with title and close button */}
@@ -142,6 +146,11 @@ export default function Info({ children, title }) {
                         {children}
                      </Box>
                   </DialogContent>
+                  <DialogActions>
+                     <Button onClick={() => setOpenInfo(!openInfo)} sx={{fontWeight: "bold"}}>
+                        close
+                     </Button>
+                  </DialogActions>
                </Box>
             </Box>
          </Dialog>
