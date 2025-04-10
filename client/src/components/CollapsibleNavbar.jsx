@@ -24,7 +24,7 @@ export default function CollapsibleNavbar({
                position: "absolute",
                // top: "5%",
                // right: "10%",
-               ml: "2%",
+               ml: "3%",
                mt: '-1%',
                color: "white",
                backgroundColor: "primary.light",
