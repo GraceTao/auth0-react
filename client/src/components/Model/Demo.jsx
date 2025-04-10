@@ -9,6 +9,7 @@ import {
 import ImageCarousel from "./ImageCarousel";
 import CollapsibleNavbar from "../CollapsibleNavbar";
 import Info from "../Info";
+import ModelInfo from "./ModelInfo";
 
 const BASE_URL = "http://localhost:5000";
 
@@ -51,8 +52,8 @@ export default function Demo() {
       >
          <CollapsibleNavbar isCollapsed={true} />
          <Box sx={{ flex: 1, position: "relative" }}>
-            <Info>
-               <Typography>Hello!</Typography>
+            <Info title="Model Results">
+               <ModelInfo />
             </Info>
          </Box>
          <Box

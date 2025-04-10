@@ -1,10 +1,8 @@
 import CollapsibleNavbar from "../CollapsibleNavbar";
 import CrimeMap from "./CrimeMap";
-import Filters from "./Filters";
-import { useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Box, Button, Typography, Link } from "@mui/material";
 import Info from "../Info";
+import MapInfo from "./MapInfo";
 
 function Map() {
    return (
@@ -23,10 +21,8 @@ function Map() {
             }}
          >
             <Box sx={{ flex: 1, position: "relative" }}>
-               <Info>
-                  <Typography>
-                     The data was taken from the Montgomery County Crime Portal.
-                  </Typography>
+               <Info title={"Data Source"}>
+                  <MapInfo />
                </Info>
                <CrimeMap />
             </Box>

@@ -18,8 +18,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const pages = [
   { name: "About", path: "/about" },
-  { name: "Maps", path: "/map" },
-  { name: "Model", path: "/model" },
+  { name: "Crime Map", path: "/map" },
+  { name: "Model Demo", path: "/model" },
 ];
 
 function Navbar() {
@@ -93,7 +93,7 @@ function Navbar() {
               component="a"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: { xs: "none", sm: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
@@ -104,7 +104,7 @@ function Navbar() {
               GAHSP
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" } }}>
               <IconButton
                 size="large"
                 onClick={handleOpenNavMenu}
@@ -142,7 +142,7 @@ function Navbar() {
               </Menu>
             </Box>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
               {pages.map((page) => (
                 <Button
                   key={page.name}
@@ -151,8 +151,9 @@ function Navbar() {
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,
+                    mx: 1,
                     color: "white",
-                    display: "block",
+                    // display: "block",
                     "&:hover": {
                       color: "lightgray",
                     },
