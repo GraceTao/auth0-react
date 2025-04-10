@@ -69,7 +69,7 @@ const About = () => {
           }
 
           .mint-gradient {
-            background: linear-gradient(90deg, #64ffda 0%, #00ffd5 100%);
+            background: linear-gradient(90deg,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -77,14 +77,14 @@ const About = () => {
 
           .section-line {
             height: 1px;
-            background: linear-gradient(90deg, rgba(100, 255, 218, 0) 0%, rgba(100, 255, 218, 0.3) 50%, rgba(100, 255, 218, 0) 100%);
+            background: linear-gradient(90deg, rgba(100, 255, 218, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(100, 255, 218, 0) 100%);
             margin: 2rem 0;
           }
 
           /* General adjustments */
           body {
-            background-color: #0a192f;
-            color: #ccd6f6;
+            background-color:rgb(255, 255, 255);
+            color:rgb(255, 255, 255);
             font-family: 'Inter', sans-serif;
           }
 
@@ -94,7 +94,7 @@ const About = () => {
 
           p {
             text-align: center;
-            color: #8892b0;
+            color:rgb(25, 118, 211);
           }
 
           /* Hero Section adjustments */
@@ -109,18 +109,18 @@ const About = () => {
           }
 
           .hero-section h1 {
-            color: #64ffda;
+            color:rgb(25, 118, 211);
             font-size: 1.25rem;
             margin-bottom: 1rem;
           }
 
           .hero-section h2 {
             font-size: 3rem;
-            color: #ccd6f6;
+            color:rgb(25, 118, 211);
             margin-bottom: 1rem;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 2px solid #64ffda;
+            border-right: 2px solid rgb(25, 118, 211);
             width: 11ch; /* Set to match the length of "Team GAHSP" */
             animation: typing 2.5s steps(9, end), blink-caret 0.75s step-end infinite;
           }
@@ -132,12 +132,12 @@ const About = () => {
 
           @keyframes blink-caret {
             from, to { border-color: transparent; }
-            50% { border-color: #64ffda; }
+            50% { border-color:rgb(0, 0, 0); }
           }
 
           .hero-section h3 {
             font-size: 2rem;
-            color: #8892b0;
+            color:rgb(0, 0, 0);
             margin-bottom: 1.5rem;
           }
 
@@ -149,20 +149,21 @@ const About = () => {
 
           .hero-section .hero-button {
             padding: 1rem 2rem;
-            border: 2px solid #64ffda;
-            color: #64ffda;
+            border: 2px solidrgb(25, 118, 211);
+            backgorund-color:rgb(25, 118, 211);
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            transition: background-color rgb(25, 118, 211) 0.3s ease;
           }
 
           .hero-section .hero-button:hover {
-            background-color: rgba(100, 255, 218, 0.1);
+            background-color: rgb(25, 118, 211);
           }
 
           /* What We Do Section */
           .section-title {
             text-align: center;
-            color: #64ffda;
+            font-size: 3rem;
+            color: rgb(25, 118, 211);
             margin-bottom: 2rem;
           }
 
@@ -175,7 +176,8 @@ const About = () => {
           }
 
           .what-we-do div {
-            background-color: #112240;
+            background-color: rgb(25, 118, 211);
+            border-color: rgb(255, 255, 255);
             border-radius: 12px;
             padding: 2rem;
             transition: transform 0.3s ease;
@@ -185,6 +187,11 @@ const About = () => {
 
           .what-we-do div:hover {
             transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          }
+          .what-we-do p{
+            font-size: 1rem;
+            color:rgb(255, 255, 255);
           }
 
           /* Team Section */
@@ -197,7 +204,7 @@ const About = () => {
           }
 
           .team-card {
-            background-color: #112240;
+            background-color:rgb(25, 118, 211);
             border-radius: 12px;
             padding: 1.5rem;
             transition: transform 0.3s ease;
@@ -208,7 +215,7 @@ const About = () => {
           .team-card img {
             margin: 0 auto;
             border-radius: 50%;
-            border: 2px solid #64ffda;
+            border: 2px solidrgb(129, 100, 255);
             width: 120px;
             height: 120px;
             margin-bottom: 1.5rem;
@@ -216,13 +223,13 @@ const About = () => {
 
           .team-card h3 {
             font-size: 1.25rem;
-            color: #ccd6f6;
+            color:rgb(201, 221, 241);
             margin-bottom: 0.5rem;
           }
 
           .team-card p {
             font-size: 1rem;
-            color: #8892b0;
+            color:rgb(255, 255, 255);
           }
 
           /* Contact Section */
@@ -231,24 +238,31 @@ const About = () => {
             flex-direction: column;
             align-items: center;
             text-align: center;
-            padding: 2rem 0;
-            background-color: #112240;
+            background-color:rgb(255, 255, 255);
             border-radius: 12px;
             max-width: 700px;
             margin: 0 auto;
+            padding: 2rem;
           }
 
           .contact-button {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
             padding: 1rem 2rem;
-            border: 2px solid #64ffda;
-            color: #64ffda;
+            border: 2px solid rgb(25, 118, 211);
+            color: rgb(25, 118, 211);
             border-radius: 8px;
             transition: background-color 0.3s ease;
           }
 
           .contact-button:hover {
-            background-color: rgba(100, 255, 218, 0.1);
+            background-color: rgb(25, 118, 211);
+          }
+          .contact-section .section-title {
+            margin-bottom: 0.5rem;
+          }
+
+          .contact-section .section-line {
+            margin: 0.5rem 0;
           }
         `}
       </style>
@@ -275,10 +289,6 @@ const About = () => {
             We develop advanced algorithms for predictive policing, helping law enforcement agencies
             anticipate and prevent crime in high-risk areas.
           </p>
-          <a href="mailto:info@teamgahsp.com" className="hero-button">
-            <Mail className="w-5 h-5" />
-            <span>Say hi!</span>
-          </a>
         </section>
 
         {/* What We Do Section */}
@@ -331,9 +341,9 @@ const About = () => {
             <p>
               Let's work together to make our communities safer.
             </p>
-            <a href="mailto:info@teamgahsp.com" className="contact-button">
+            <a href="mailto:teamgahsp.umd@gmail.com" className="contact-button flex items-center gap-2">
               <Mail className="w-5 h-5" />
-              <span>Say hi!</span>
+              <span> Say hi!</span>
             </a>
           </div>
         </section>
