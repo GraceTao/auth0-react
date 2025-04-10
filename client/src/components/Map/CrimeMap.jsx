@@ -190,12 +190,31 @@ const CrimeMap = () => {
 
          // Reattach click listeners
          map.data.addListener("click", (event) => {
-            const feat = event.feature.getProperty("Offense_Name");
+            const offense = event.feature.getProperty("Offense_name");
+            const nibrs_name = event.feature.getProperty("NIBRS_CrimeName");
             const date = event.feature.getProperty("start_date");
-            const crimeAgainst = event.feature.getProperty("Crime_Against");
-            infoWindowRef.current.setContent(
-               `${date}, ${crimeAgainst}, ${feat}`
-            );
+            const time = event.feature.getProperty("start_time");
+            const crimeAgainst = event.feature.getProperty("Crime_against");
+            const address = event.feature.getProperty("Address");
+            const district = event.feature.getProperty("District");
+            const place = event.feature.getProperty("Type_of_place");
+            const victims = event.feature.getProperty("Number_victims");
+         
+            const content = `
+               <div style="font-family: Arial, sans-serif; max-width: "250px";">
+                  <h3 style="margin-top: 0;">${offense || "Unknown Offense"}</h3>
+                  <p><a href="https://ucr.fbi.gov/nibrs/2011/resources/nibrs-offense-codes" target="_blank" rel="noopener noreferrer"><strong>NIBRS crime name</strong></a>: ${nibrs_name || "N/A"}</p>
+                  <p><strong>Date:</strong> ${date || "N/A"}</p>
+                  <p><strong>Time:</strong> ${time || "N/A"}</p>
+                  <p><strong>Crime Against:</strong> ${crimeAgainst || "N/A"}</p>
+                  <p><strong>Address:</strong> ${address || "N/A"}</p>
+                  <p><strong>District:</strong> ${district || "N/A"}</p>
+                  <p><strong>Place Type:</strong> ${place || "N/A"}</p>
+                  <p><strong>Victims:</strong> ${victims || "N/A"}</p>
+               </div>
+            `;
+         
+            infoWindowRef.current.setContent(content);
             infoWindowRef.current.setPosition(event.latLng);
             infoWindowRef.current.open(map);
          });

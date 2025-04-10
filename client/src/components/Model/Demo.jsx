@@ -10,6 +10,8 @@ import ImageCarousel from "./ImageCarousel";
 import CollapsibleNavbar from "../CollapsibleNavbar";
 import Info from "../Info";
 
+const BASE_URL = "http://localhost:5000";
+
 export default function Demo() {
    const [images, setImages] = useState({});
    const [loading, setLoading] = useState(true);
@@ -20,7 +22,7 @@ export default function Demo() {
       try {
          console.log("Fetching images for:", tab);
          const response = await fetch(
-            `http://localhost:5000/api/images/hotspots?folderName=${tab}`
+            `${BASE_URL}/api/images/hotspots?folderName=${tab}`
          );
          const res = await response.json();
          setImages((prev) => ({ ...prev, [tab]: res }));

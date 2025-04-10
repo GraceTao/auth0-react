@@ -12,6 +12,35 @@ const getDateNDaysAgo = (days) => {
    return date.toISOString().split("T")[0];
 };
 
+function formatAddress(item) {
+   let address = ``;
+   if (item.address_number) {
+      address += `${item.address_number} `; 
+   }
+   if (item.street_prefix_dir) {
+      address += `${item.street_prefix_dir} `;
+   }
+   if (item.address_street) {
+      address += `${item.address_street} `;
+   }
+   if (item.street_type) {
+      address += `${item.street_type} `;
+   }
+   if (item.street_suffix_dir) {
+      address += `${item.street_suffix_dir}, `;
+   }
+   if (item.city) {
+      address += `${item.city}, `;
+   }
+   if (item.state) {
+      address += `${item.state} `;
+   }
+   if (item.zip_code) {
+      address += `${item.zip_code} `;
+   }
+   return address;
+}
+
 function convertToGeoJson(data) {
    return {
       type: "FeatureCollection",
@@ -31,10 +60,13 @@ function convertToGeoJson(data) {
                start_time: item.start_date?.includes("T")
                   ? item.start_date.split("T")[1].split(".")[0]
                   : "",
-               Crime_Against: item.crimename1,
+               Crime_against: item.crimename1,
                NIBRS_CrimeName: item.crimename2,
-               Offense_Name: item.crimename3,
-               place: item.place,
+               Offense_name: item.crimename3,
+               Type_of_place: item.place,
+               District: item.district,
+               Number_victims: item.victims,
+               Address: formatAddress(item),
                weight: item.weight,
             },
          })),
@@ -84,8 +116,8 @@ crimesAPI.get("/filter", async (req, res) => {
          params: {
             $limit: 1000,
             $order: "start_date DESC",
-            $select:
-               "nibrs_code,start_date,crimename1,crimename2,crimename3,latitude,longitude,place",
+            $select: "*",
+               // "nibrs_code,start_date,crimename1,crimename2,crimename3,latitude,longitude,place",
             $where: whereClauses.join(" AND "),
             $$app_token: SODA_API_TOKEN,
          },
