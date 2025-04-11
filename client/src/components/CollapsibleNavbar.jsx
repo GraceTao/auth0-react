@@ -25,7 +25,7 @@ export default function CollapsibleNavbar({
            <IconButton
               onClick={handleCollapse}
               sx={{
-                 position: "absolute",
+                 position: "sticky",
                  ml: "3%",
                  mt: '-1%',
                  color: "white",

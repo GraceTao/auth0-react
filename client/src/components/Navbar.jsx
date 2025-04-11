@@ -26,7 +26,7 @@ const pages = [
 function Navbar({ isCollapsed, handleCollapse }) {
    const [anchorElNav, setAnchorElNav] = useState(null);
    const location = useLocation();
-   const isAboutPage = location.pathname === "/about";
+   const isAboutPage = location.pathname === "/about" || location.pathname === "/";
    const { currUser, googleLogin, logout, authMessage, closeAuthMessage } =
       useAuth();
 

@@ -11,8 +11,8 @@ import CollapsibleNavbar from "../CollapsibleNavbar";
 import Info from "../Info";
 import ModelInfo from "./ModelInfo";
 
-const BASE_URL = "http://localhost:5000";
-// const BASE_URL = "";
+// const BASE_URL = "http://localhost:5000";
+const BASE_URL = "";
 
 export default function Demo() {
    const [images, setImages] = useState({});
