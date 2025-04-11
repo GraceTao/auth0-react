@@ -9,7 +9,7 @@ export default function CollapsibleNavbar({
 }) {
    const [isCollapsed, setIsCollapsed] = useState(initialCollapsed);
    const location = useLocation();
-   const isAboutPage = location.pathname === "/about";
+   const isAboutPage = location.pathname === "/about" || location.pathname === "/";
 
    const handleCollapse = () => {
       setIsCollapsed((prev) => !prev);
