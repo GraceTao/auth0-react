@@ -591,8 +591,7 @@ const About = () => {
           <h2>TEAM GAHSP</h2>
           <h3><b>G</b>enerating <b>A</b>lgorithms for <b>H</b>ot <b>S</b>pots <b>P</b>olicing</h3>
           <p>
-            We are an undergraduate team developing an algorithm for predictive policing, helping law 
-            enforcement agencies anticipate and prevent crime in high-risk areas.
+            We are an undergraduate team developing an improved algorithm to correct for limitations and biases of existing predictive policing algorithms.
           </p>
         </section>
 

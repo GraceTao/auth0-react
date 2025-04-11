@@ -14,7 +14,7 @@ import { formatURL } from "../../tools";
 import { useAuth } from "../../context/AuthContext";
 import FilterListIcon from '@mui/icons-material/FilterList';
 
-const BASE_URL = "http://localhost:5173";
+const BASE_URL = "http://localhost:5000";
 // const BASE_URL = "";
 
 const CrimeMap = () => {
