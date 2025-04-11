@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { Button, Paper, Box, Typography } from "@mui/material";
+import {
+  Button, Paper, Box, Typography,
+  ToggleButton, ToggleButtonGroup,
+  Checkbox, FormControlLabel
+} from "@mui/material";
 import "./Map.css";
 import RadiusSlider from "./RadiusSlider";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
@@ -8,8 +12,9 @@ import { useFilters } from "../../context/FiltersContext";
 import dayjs from "dayjs";
 import { formatURL } from "../../tools";
 import { useAuth } from "../../context/AuthContext";
+import FilterListIcon from '@mui/icons-material/FilterList';
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://localhost:5173";
 // const BASE_URL = "";
 
 const CrimeMap = () => {
@@ -23,6 +28,9 @@ const CrimeMap = () => {
    const [scriptLoaded, setScriptLoaded] = useState(false);
    const googleMapsScriptId = "google-maps-script";
    const [openFilter, setOpenFilter] = useState(false);
+   const [mapType, setMapType] = useState('roadmap');
+   // Auto-zoom state - controls whether map zooms automatically when radius changes
+   const [autoZoomEnabled, setAutoZoomEnabled] = useState(true); // Default is true/checked
 
    const { filters, applyFilters, setApplyFilters, areFiltersLoading } = useFilters();
    const { currUser } = useAuth();
@@ -100,9 +108,9 @@ const CrimeMap = () => {
          zoom: 10.5,
          mapId: "838b9a3d29242a9c",
          gestureHandling: "greedy",
+         mapTypeControl: false,
       };
 
-      // Ensure the Google Map constructor is available
       const newMap = new window.google.maps.Map(mapRef.current, options);
       setMap(newMap);
       addBoundary(newMap);
@@ -116,7 +124,12 @@ const CrimeMap = () => {
    };
 
    const addBoundary = (map) => {
+      if (!map) return;
       const featureLayer = map.getFeatureLayer("ADMINISTRATIVE_AREA_LEVEL_2");
+      if (!featureLayer) {
+          console.warn("Feature layer not available yet for boundary styling.");
+          return;
+      }
       const boundaryLocation = "ChIJh6O4gzUytokRc2ipdwYZC3g";
 
       const featureStyleOptions = {
@@ -127,53 +140,14 @@ const CrimeMap = () => {
          fillOpacity: 0.2,
       };
 
+      featureLayer.style = null;
+
       featureLayer.style = (options) => {
          if (options.feature.placeId === boundaryLocation) {
             return featureStyleOptions;
          }
       };
    };
-
-   // const displayMarkers = async (map) => {
-   //    const infoWindow = infoWindowRef.current;
-
-   //    const params = formatURL(filters);
-
-   //    // console.log(`${BASE_URL}/api/crimes/filter?${params}`);
-   //    // const res = await fetch(`/api/crimes/filter?${params}`);
-   //    const res = await fetch(`${BASE_URL}/api/crimes/filter?${params}`);
-
-   //    if (!res.ok) {
-   //       console.error("Failed to fetch:", res.status, res.statusText);
-   //       const text = await res.text(); // Log the actual response text
-   //       console.error("Response text:", text);
-   //       return;
-   //    }
-
-   //    const data = await res.json(); // Parse response as JSON
-
-   //    // remove existing markers, if any
-   //    if (geojsonMarkers) {
-   //       infoWindow.close();
-   //       for (var i = 0; i < geojsonMarkers.length; i++) {
-   //          map.data.remove(geojsonMarkers[i]);
-   //       }
-   //    }
-
-   //    const markers = map.data.addGeoJson(data);
-   //    setGeoJsonMarkers(markers);
-
-   //    map.data.addListener("click", function (event) {
-   //       const feat = event.feature.getProperty("Offense_Name");
-   //       const date = event.feature.getProperty("start_date");
-   //       const crimeAgainst = event.feature.getProperty("Crime_Against");
-
-   //       infoWindow.setContent(`${date}, ${crimeAgainst}, ${feat}`);
-   //       infoWindow.setPosition(event.latLng);
-   //       infoWindow.setZIndex(2000);
-   //       infoWindow.open(map);
-   //    });
-   // };
 
    const displayMarkers = async (map) => {
       try {
@@ -234,6 +208,11 @@ const CrimeMap = () => {
          input.type = "text";
          input.placeholder = "Enter Location";
 
+         input.style.marginTop = "1rem";
+         input.style.padding = '0.5rem 1rem';
+         input.style.fontSize = '1rem';
+         input.style.height = '2rem';
+
          const searchBox = new window.google.maps.places.SearchBox(input);
          map.controls[window.google.maps.ControlPosition.TOP_CENTER].push(
             input
@@ -290,7 +269,7 @@ const CrimeMap = () => {
          });
       },
       [radius]
-   ); // Add dependencies here
+   );
 
    const handleReset = () => {
       if (map) {
@@ -307,48 +286,143 @@ const CrimeMap = () => {
       }
    };
 
+   const handleMapTypeChange = (event, newMapType) => {
+      if (newMapType !== null && map) {
+         setMapType(newMapType);
+         map.setMapTypeId(newMapType);
+         addBoundary(map);
+      }
+   };
+
+   // Handler for the auto-zoom checkbox
+   const handleAutoZoomChange = (event) => {
+      const isChecked = event.target.checked;
+      setAutoZoomEnabled(isChecked);
+      
+      // If user turns off auto-zoom, reset the zoom level to default
+      // so they can see the whole county again
+      if (!isChecked && circle) {
+         map.setZoom(10.5); // Back to default zoom level
+      }
+   };
+
    return (
-      <div className="map-container">
+      <Box sx={{ height: "100%", width: "100%", position: 'relative' }}>
          <Box ref={mapRef} className="map" />
 
-         <Button
-            variant="contained"
-            onClick={() => setOpenFilter(!openFilter)}
+         <Box
             sx={{
-               position: "absolute",
-               top: {
-                  xs: "2%", // on extra-small screens
-                  sm: "2%",
-                  md: "1%", // on medium and up
-               },
-               left: {
-                  xs: "5%",
-                  sm: "7%",
-               },
-               fontSize: {
-                  xs: "0.75rem", // smaller font on phones
-                  sm: "0.875rem",
-                  md: "1rem",
-               },
-               padding: {
-                  xs: 1,
-                  sm: 1.2,
-                  md: 1.5,
-               },
-               borderRadius: 3,
-               boxShadow: 3,
-               backgroundColor: "primary.dark",
-               "&:hover": {
-                  boxShadow: 7,
-                  backgroundColor: "primary.dark",
-               },
+               position: 'absolute',
+               top: '80px',
+               left: '10px',
+               zIndex: 1,
+               display: 'flex',
+               flexDirection: 'column',
+               gap: 1,
             }}
          >
-            Filter
-            <FilterAltIcon sx={{ ml: 1 }} />
-         </Button>
+            <ToggleButtonGroup
+               value={mapType}
+               exclusive
+               onChange={handleMapTypeChange}
+               aria-label="map type"
+               sx={{
+                  backgroundColor: 'white',
+                  boxShadow: 1,
+                  borderRadius: 1,
+                  height: '40px',
+               }}
+            >
+               <ToggleButton
+                  value="roadmap"
+                  aria-label="roadmap view"
+                  sx={{
+                     textTransform: 'none',
+                     fontWeight: 'bold',
+                     color: 'text.primary',
+                     '&.Mui-selected': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                        color: 'text.primary',
+                     },
+                     '&.Mui-selected:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.12)',
+                     },
+                     '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                     }
+                  }}
+               >
+                  Map
+               </ToggleButton>
+               <ToggleButton
+                  value="satellite"
+                  aria-label="satellite view"
+                  sx={{
+                     textTransform: 'none',
+                     fontWeight: 'bold',
+                     color: 'text.primary',
+                     '&.Mui-selected': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                        color: 'text.primary',
+                     },
+                     '&.Mui-selected:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.12)',
+                     },
+                     '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                     }
+                  }}
+               >
+                  Satellite
+               </ToggleButton>
+            </ToggleButtonGroup>
 
-         {/* Simplified Filters component - no need to pass setApplyFilters */}
+            <Button
+               variant="contained"
+               startIcon={<FilterListIcon />}
+               onClick={() => setOpenFilter(!openFilter)}
+               sx={{
+                  backgroundColor: 'primary.main',
+                  color: 'white',
+                  '&:hover': { backgroundColor: 'primary.dark' },
+                  height: '40px',
+                  boxShadow: 1,
+               }}
+            >
+               Filter
+            </Button>
+
+            {/* Auto-zoom checkbox - lets users control whether the map auto-zooms when radius changes */}
+            <FormControlLabel
+               control={
+                  <Checkbox
+                     checked={autoZoomEnabled}
+                     onChange={handleAutoZoomChange}
+                     size="small"
+                     sx={{
+                        color: 'primary.main',
+                        '&.Mui-checked': {
+                           color: 'primary.dark',
+                        },
+                     }}
+                  />
+               }
+               label="Auto focus"
+               sx={{
+                  backgroundColor: 'white',
+                  borderRadius: 1,
+                  boxShadow: 1,
+                  padding: '0px 8px 0px 4px',
+                  margin: 0,
+                  height: '36px',
+                  '& .MuiTypography-root': {
+                     fontSize: '0.875rem',
+                     fontWeight: 'bold',
+                  }
+               }}
+            />
+         </Box>
+
          <Filters openFilter={openFilter} setOpenFilter={setOpenFilter} />
 
          <Box
@@ -370,9 +444,15 @@ const CrimeMap = () => {
             }}
          >
             <Typography fontWeight="bold">Radius (mi)</Typography>
-            <RadiusSlider circle={circle} setRadius={setRadius} map={map} />
+            {/* Pass the auto-zoom state to RadiusSlider so it knows whether to zoom or not */}
+            <RadiusSlider 
+               circle={circle} 
+               setRadius={setRadius} 
+               map={map} 
+               autoZoomEnabled={autoZoomEnabled} // This controls the zoom behavior
+            />
          </Box>
-      </div>
+      </Box>
    );
 };
 

@@ -70,7 +70,7 @@ export default function Info({ children, title }) {
                   backgroundColor: "primary.dark",
                }}
             >
-               {/* Your content container with max-width */}
+               {/* Content container with max-width */}
                <Box
                   display="flex"
                   flexDirection="column"

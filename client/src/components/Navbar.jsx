@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import {
    AppBar,
@@ -23,8 +23,10 @@ const pages = [
    { name: "Model Demo", path: "/model" },
 ];
 
-function Navbar() {
+function Navbar({ isCollapsed, handleCollapse }) {
    const [anchorElNav, setAnchorElNav] = useState(null);
+   const location = useLocation();
+   const isAboutPage = location.pathname === "/about";
    const { currUser, googleLogin, logout, authMessage, closeAuthMessage } =
       useAuth();
 
@@ -80,25 +82,18 @@ function Navbar() {
 
    return (
       <Box>
-         <AppBar position="static" sx={{ boxShadow: 0 }}>
+         <AppBar
+            position={isAboutPage ? "fixed" : "static"}
+            sx={{
+               boxShadow: 0,
+               backgroundColor: 'primary.main',
+               ...(isAboutPage && {
+                  borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+               })
+            }}
+         >
             <Container maxWidth={false}>
                <Toolbar disableGutters>
-                  {/* <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                display: { xs: "none", sm: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              GAHSP
-            </Typography> */}
                   <Box
                      component="img"
                      src={Logo}
@@ -108,6 +103,7 @@ function Navbar() {
                         maxHeight: 64,
                         width: "auto",
                         mr: 2,
+                        ml: 1,
                         display: { xs: "none", sm: "flex" },
                      }}
                   />
@@ -165,7 +161,6 @@ function Navbar() {
                               my: 2,
                               mx: 1,
                               color: "white",
-                              // display: "block",
                               "&:hover": {
                                  color: "lightgray",
                               },
@@ -175,7 +170,7 @@ function Navbar() {
                         </Button>
                      ))}
                   </Box>
-                  <Box sx={{ flexGrow: 0 }}>
+                  <Box sx={{ flexGrow: 0, mr: 1 }}>
                      <Box
                         sx={{ display: "flex", alignItems: "center", gap: 1.5 }}
                      >
@@ -210,7 +205,6 @@ function Navbar() {
             </Container>
          </AppBar>
 
-         {/* Snackbar for messages */}
          <Snackbar
             open={authMessage.open}
             autoHideDuration={3000}
