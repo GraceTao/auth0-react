@@ -1,6 +1,6 @@
 import { Mail } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
-import CollapsibleNavbar from "../CollapsibleNavbar"
+import CollapsibleNavbar from "../CollapsibleNavbar";
 
 const About = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -102,23 +102,20 @@ const About = () => {
           .hero-section {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             text-align: center;
-            min-height: 100vh;
-            padding-top: 4rem;
+            padding-top: 6rem;
           }
 
           .hero-section h1 {
-            color:rgb(25, 118, 211);
+            color:rgb(0, 0, 0);
             font-size: 1.25rem;
-            margin-bottom: 1rem;
           }
 
           .hero-section h2 {
             font-size: 3rem;
             color:rgb(25, 118, 211);
-            margin-bottom: 1rem;
             white-space: nowrap;
             overflow: hidden;
             border-right: 2px solid rgb(25, 118, 211);
@@ -139,17 +136,16 @@ const About = () => {
           .hero-section h3 {
             font-size: 2rem;
             color:rgb(0, 0, 0);
-            margin-bottom: 1.5rem;
           }
 
           .hero-section p {
             max-width: 700px;
-            margin-bottom: 2rem;
             line-height: 1.6;
+            color: rgb(0, 0, 0);
           }
 
           .hero-section .hero-button {
-            padding: 1rem 2rem;
+            padding: 1rem;
             border: 2px solidrgb(25, 118, 211);
             backgorund-color:rgb(25, 118, 211);
             border-radius: 8px;
@@ -160,20 +156,24 @@ const About = () => {
             background-color: rgb(25, 118, 211);
           }
 
-          /* What We Do Section */
+          
           .section-title {
             text-align: center;
             font-size: 3rem;
             color: rgb(25, 118, 211);
-            margin-bottom: 2rem;
           }
 
+          /* What We Do Section */
+          .what-we-do-section {
+            padding-top: 3rem !important;
+          }
           .what-we-do {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            flex-direction: row;
+            justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
+            text-align: center
           }
 
           .what-we-do div {
@@ -199,9 +199,10 @@ const About = () => {
           .team-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            row-gap: 3rem;
+            column-gap: 0.5rem;
             justify-items: center;
-            padding: 2rem;
+            padding: 3rem;
           }
 
           .team-card {
@@ -210,22 +211,31 @@ const About = () => {
             padding: 1.5rem;
             transition: transform 0.3s ease;
             width: 100%;
-            max-width: 250px;
+            max-width: 300px;
           }
 
           .team-card img {
-            margin: 0 auto;
+            width: 175px;
+            height: 175px;
+            object-fit: cover; /* crops/fills nicely */
             border-radius: 50%;
-            border: 2px solidrgb(129, 100, 255);
-            width: 120px;
-            height: 120px;
+            border: 2px solid rgb(201, 221, 241);
             margin-bottom: 1.5rem;
+          }
+
+          .section-title-team {
+            text-align: center;
+            font-size: 3rem;
+            color: rgb(25, 118, 211);
+            margin-bottom: 2rem;
+            margin-top: 10rem;
           }
 
           .team-card h3 {
             font-size: 1.25rem;
             color:rgb(201, 221, 241);
             margin-bottom: 0.5rem;
+            margin-top: 1rem;
           }
 
           .team-card p {
@@ -245,7 +255,10 @@ const About = () => {
             margin: 0 auto;
             padding: 2rem;
           }
-
+          
+          .contact-section p {
+            color: rgb(0,0,0);
+          }
           .contact-button {
             margin-top: 1rem;
             padding: 1rem 2rem;
@@ -256,7 +269,7 @@ const About = () => {
           }
 
           .contact-button:hover {
-            background-color: rgb(25, 118, 211);
+            background-color: rgb(201, 221, 241);
           }
           .contact-section .section-title {
             margin-bottom: 0.5rem;
@@ -284,7 +297,7 @@ const About = () => {
         </section>
 
         {/* What We Do Section */}
-        <section className="py-20 px-4 md:px-8">
+        <section className="px-4 md:px-8 what-we-do-section">
           <div className="max-w-7xl mx-auto scroll-animate">
             <h2 className="section-title">What we do</h2>
             <div className="section-line" />
@@ -308,15 +321,12 @@ const About = () => {
         {/* Team Section */}
         <section className="py-20 px-4 md:px-8">
           <div className="max-w-7xl mx-auto scroll-animate">
-            <h2 className="section-title">Meet our team</h2>
+            <h2 className="section-title-team">Meet our team</h2>
             <div className="section-line" />
             <div className="team-grid">
               {teamMembers.map((member) => (
                 <div key={member.name} className="team-card">
-                  <img 
-                    src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg" 
-                    alt={member.name} 
-                  />
+                  <img src={`/imgs/${member.img}.jpg`} alt={member.name} />
                   <h3>{member.name}</h3>
                   <p>{member.role}</p>
                 </div>
@@ -331,11 +341,11 @@ const About = () => {
             <h2 className="section-title">Contact us</h2>
             <div className="section-line" />
             <p>
-              Let's work together to make our communities safer.
+              Feel free to email us on further inquiries on our research or if you're interested in working with us.
             </p>
             <a href="mailto:teamgahsp.umd@gmail.com" className="contact-button flex items-center gap-2">
               <Mail className="w-5 h-5" />
-              <span> Say hi!</span>
+              <span> Email Us! </span>
             </a>
           </div>
         </section>
@@ -345,15 +355,15 @@ const About = () => {
 };
 
 const teamMembers = [
-  { name: "Aaron Lin", role: "Back end" },
-  { name: "Alex Chen", role: "Front end" },
-  { name: "Andrea Maria", role: "Research Team" },
-  { name: "Allen Du", role: "Back end" },
-  { name: "Coley Samuels", role: "Research Team" },
-  { name: "Grace Tao", role: "Front End" },
-  { name: "Rios Versace", role: "Research Team" },
-  { name: "Trina Arellano", role: "Front End" },
-  { name: "Zoya Tasneem", role: "Front End" }
+  { name: "Aaron Lin", role: "Back end", img: "default" },
+  { name: "Alex Chen", role: "Front end", img: "alex" },
+  { name: "Andrea Maria", role: "Research Team", img: "andrea" },
+  { name: "Allen Du", role: "Back end", img: "allen" },
+  { name: "Coley Samuels", role: "Research Team", img: "coley" },
+  { name: "Grace Tao", role: "Front End", img: "grace" },
+  { name: "Rios Versace", role: "Research Team", img: "default" },
+  { name: "Trina Arellano", role: "Front End", img: "default" },
+  { name: "Zoya Tasneem", role: "Front End", img: "zoya" }
 ];
 
 export default About;
